@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+
+    --quote-fsize: 28px;
+    --font-family: 'Manrope', sans-serif;
+    --fweight: 800;
+}
+
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: var(--dark-blue);
+    padding: 1em;
+    font-family: var(--font-family);
+}
+
+.advice-card {
+    max-width: 25em;
+    margin: 15em auto;
+    background-color: var(--dark-grayish-blue);
+    padding: clamp(1.5em, 4vw, 2em);
+    text-align: center;
+    border-radius: 1em;
+    position: relative;
+}
+
+.advice-id {
+    color: var(--neon-green);
+    margin-bottom: clamp(1.5em, 4vw, 2em);
+}
+
+.advice {
+    font-size: 1.2em;
+    color: var(--light-cyan);
+    margin-bottom: clamp(1.5em, 4vw, 2em);
+}
+
+.divider-container {
+    margin-bottom: clamp(1.5em, 4vw, 2em);
+}
+
+/* .advice-card::after {
+    content: url(images/icon-dice.svg);
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    padding: 1em;
+} */
+
+.dice {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

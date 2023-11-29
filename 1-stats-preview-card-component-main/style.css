@@ -1,0 +1,173 @@
+/* Importing Google Fonts - Inter for general text and Lexend Deca for specific areas */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+/* Root variables for consistent color and font usage throughout the stylesheet */
+:root {
+    /* Primary Colors */
+    --main-background: hsl(233, 47%, 7%);
+    --card-background: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+
+    /* Neutral Colors */
+    --main-heading-stats: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+
+    /* Font weights */
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    /* Font Families */
+    --ff-inter: 'Inter', sans-serif;
+    --ff-lexend: 'Lexend Deca' sans-serif;
+
+    /* Font Sizes */
+    --fs-small: 1.2em;
+    --fs-medium: 1.5em;
+    --fs-large: 3em;
+}
+
+/* Reset styles for consistency across browsers */
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General styling for images */
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Body styling with the main background color */
+body {
+    background-color: var(--main-background);
+}
+
+/* Styling for the first flex container */
+.flex-container-1 {
+    display: flex;
+    margin: 5em auto;
+    max-width: 85%;
+}
+
+/* Styling for the main content section */
+.content-section {
+    background-color: var(--card-background);
+    border-radius: 1em 0 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: clamp(2em, 4vw, 6em);
+    width: 50%;
+}
+
+/* Styling for the main heading */
+.main-heading {
+    color: var(--main-heading-stats);
+    font-family: var(--ff-inter);
+    font-size: clamp(var(--fs-small), 4vw, var(--fs-large));
+}
+
+/* Styling for the accent color within the main heading */
+.main-heading span {
+    color: var(--accent);
+}
+
+/* Styling for the main paragraph */
+.main-paragraph {
+    color: var(--main-paragraph);
+    font-size: clamp(16px, 2vw, var(--fs-medium));
+    font-family: var(--ff-lexend);
+    line-height: 1.5;
+    padding-bottom: 1.5em;
+}
+
+/* Styling for the second flex container */
+.flex-container-2 {
+    display: flex;
+    gap: clamp(1em, 2vw, 3em);
+}
+
+/* Styling for spans within the second flex container */
+.flex-container-2 span {
+    align-items: center;
+    display: block;
+    max-width: 100%;
+}
+
+/* Styling for the first span within the second flex container */
+.flex-container-2 span:first-child {
+    color: var(--main-heading-stats);
+    font-family: var(--ff-inter);
+    font-size: clamp(18px, 3vw, 40px);
+    font-weight: var(--fw-bold);
+}
+
+/* Styling for the second span within the second flex container */
+.flex-container-2 span:nth-child(2) {
+    color: var(--stat-headings);
+    font-family: var(--ff-inter);
+    font-size: clamp(.7rem, 1vw, var(--fs-small));
+    text-transform: uppercase;
+}
+
+/* Styling for the image section */
+.image-section {
+    position: relative;
+    width: 50%;
+}
+
+/* Styling for the image within the image section */
+.image-section img {
+    border-radius: 0 1em 1em 0;
+    height: 100%;
+}
+
+/* Styling for an overlay after the image within the image section */
+.image-section::after {
+    background-color: var(--accent);
+    border-radius: 0 1em 1em 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 43.75em) {
+    .flex-container-1 {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin: 5em auto;
+        max-width: 85%;
+    }
+
+    .flex-container-2 {
+        flex-direction: column;
+    }
+
+    .image-section {
+        width: 100%;
+    }
+
+    .content-section {
+        border-radius: 0 0 1em 1em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .image-section img {
+        border-radius: 1em 1em 0 0;
+    }
+
+    .image-section::after {
+        border-radius: 1em 1em 0 0;
+    }
+}

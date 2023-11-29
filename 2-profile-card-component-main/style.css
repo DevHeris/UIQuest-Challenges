@@ -1,0 +1,138 @@
+/* Importing Google Fonts - Kumbh Sans for general text */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* Root variables for consistent color and font usage throughout the stylesheet */
+:root {
+    /* Primary Colors */
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+
+    /* Neutral Colors */
+    --dark-gray: hsl(0, 0%, 59%);
+
+    /* Font weights */
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    /* Font Families */
+    --font-family: 'Kumbh Sans', sans-serif;
+
+    /* Font Sizes */
+    --fs-small: 1em;
+    --fs-medium: 1.125em;
+    --fs-large: 1.5em;
+}
+
+/* Reset styles for consistency across browsers */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styling for images */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Body styling with the main background color and background images */
+body {
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+    background-position: top -500px left -200px, bottom -600px right -150px;
+    background-repeat: no-repeat;
+    background-color: hsl(185, 75%, 39%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling to make the background images responsive */
+@media screen and (max-width:46rem) {
+    body {
+        background-position: top -500px left -700px, bottom -600px right -700px;
+    }
+}
+
+/* Styling for the main card container */
+.card {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the header section of the card */
+.card-header img {
+    border-radius: .7em .7em 0 0;
+}
+
+/* Styling for the content section of the card */
+.card-content {
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid var(--dark-gray);
+    padding: .8em;
+    text-align: center;
+}
+
+/* Styling for the name in the content section */
+.card-content .name {
+    font-size: clamp(var(--fs-small), 3vw, var(--fs-large));
+    font-weight: var(--fw-bold);
+    color: var(--very-dark-desaturated-blue);
+    padding-bottom: .5em;
+    transform: translateY(-80%);
+}
+
+/* Styling for the age in the content section */
+.card-content .age {
+    font-weight: var(--fw-normal);
+    color: var(--dark-gray);
+    font-size: .8em;
+    padding-inline-start: .6em;
+}
+
+/* Styling for the location in the content section */
+.card-content .location {
+    color: var(--dark-grayish-blue);
+    transform: translateY(-150%);
+}
+
+/* Styling for the circular image in the content section */
+.card-content img {
+    border-radius: 50%;
+    transform: translate(100%, -60%);
+    border: 5px solid white;
+}
+
+/* Styling for the footer section of the card */
+.card-footer {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    padding: 1.5em 1em;
+    justify-content: space-around;
+    border-radius: 0 0 .7em .7em;
+}
+
+/* Styling for the status in the footer section */
+.status {
+    color: var(--very-dark-desaturated-blue);
+    font-weight: var(--fw-bold);
+    font-size: clamp(var(--fs-small), 1.2vw, 2.4em);
+    text-align: center;
+}
+
+/* Styling for the item name in the footer section */
+.item-name {
+    color: var(--dark-gray);
+    text-align: center;
+    display: block;
+}
