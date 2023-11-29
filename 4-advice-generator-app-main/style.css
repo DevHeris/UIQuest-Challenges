@@ -71,20 +71,23 @@ body {
 
 .dice-wrapper:hover {
     box-shadow: 2px 2px 20px 5px var(--neon-green);
-
 }
 
 .spin {
-    animation: spin .5s linear infinite;
-    animation-fill-mode: backwards;
+    animation: spin .8s linear infinite;
+    animation-fill-mode: forwards;
+    opacity: 1;
+    transition: opacity .8s linear;
 }
 
-/* @keyframes spin {
+@keyframes spin {
     0% {
         transform: rotateZ(360deg);
+        opacity: .8;
     }
 
     100% {
         transform: rotateZ(0);
+        opacity: 1;
     }
-} */
+}
