@@ -1,18 +1,19 @@
+/* Importing the Manrope font with a weight of 800 from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 
+/* Define custom CSS variables using :root */
 :root {
     --light-cyan: hsl(193, 38%, 86%);
     --neon-green: hsl(150, 100%, 66%);
-
     --grayish-blue: hsl(217, 19%, 38%);
     --dark-grayish-blue: hsl(217, 19%, 24%);
     --dark-blue: hsl(218, 23%, 16%);
-
     --quote-fsize: 28px;
     --font-family: 'Manrope', sans-serif;
     --fweight: 800;
 }
 
+/* Reset default styles for all elements */
 *,
 ::after,
 ::before {
@@ -21,18 +22,21 @@
     box-sizing: border-box;
 }
 
+/* Style for images to be responsive */
 img {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
+/* Body styling */
 body {
     background-color: var(--dark-blue);
     padding: 1em;
     font-family: var(--font-family);
 }
 
+/* Styling for the advice card */
 .advice-card {
     max-width: 25em;
     margin: 10em auto;
@@ -43,21 +47,25 @@ body {
     position: relative;
 }
 
+/* Styling for the advice ID */
 .advice-id {
     color: var(--neon-green);
     margin-bottom: clamp(1.5em, 4vw, 2em);
 }
 
+/* Styling for the advice text */
 .advice {
     font-size: 1.2em;
     color: var(--light-cyan);
     margin-bottom: clamp(1.5em, 4vw, 2em);
 }
 
+/* Styling for the divider container */
 .divider-container {
     margin-bottom: clamp(1.5em, 4vw, 2em);
 }
 
+/* Styling for the dice wrapper */
 .dice-wrapper {
     position: absolute;
     bottom: 0;
@@ -69,10 +77,12 @@ body {
     cursor: pointer;
 }
 
+/* Hover effect for the dice wrapper */
 .dice-wrapper:hover {
     box-shadow: 2px 2px 20px 5px var(--neon-green);
 }
 
+/* Animation for the spinning effect */
 .spin {
     animation: spin .8s linear infinite;
     animation-fill-mode: forwards;
@@ -80,6 +90,7 @@ body {
     transition: opacity .8s linear;
 }
 
+/* Keyframes for the spin animation */
 @keyframes spin {
     0% {
         transform: rotateZ(360deg);
