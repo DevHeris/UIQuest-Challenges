@@ -11,41 +11,46 @@
 </head>
 
 <body>
-  <section class="hero-container container">
-    <header class="primary-header flex">
-      <div class="logo-container">
-        <img src="images/logo.svg" alt="Loopstudios logo" title="Loopstudios logo" class="logo">
+  <section class="hero-container">
+    <div class="container">
+      <header class="primary-header flex">
+        <div class="logo-container">
+          <img src="images/logo.svg" alt="Loopstudios logo" title="Loopstudios logo" class="logo">
+        </div>
+
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <nav>
+          <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+            <li class="active">
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Events</a>
+            </li>
+            <li>
+              <a href="#">Products</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="hero-h1-container container">
+        <h1 class="hero-h1">
+          Immersive experiences that deliver
+        </h1>
       </div>
-
-      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-        <span class="sr-only">Menu</span>
-      </button>
-
-      <nav>
-        <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
-          <li class="active">
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Careers</a>
-          </li>
-          <li>
-            <a href="#">Events</a>
-          </li>
-          <li>
-            <a href="#">Products</a>
-          </li>
-          <li>
-            <a href="#">Support</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <h1>
-      Immersive experiences that deliver
-    </h1>
+    </div>
   </section>
+
 
   <section class="overview-section container">
     <div class="image-container">

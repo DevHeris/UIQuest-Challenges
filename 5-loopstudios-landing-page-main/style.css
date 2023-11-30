@@ -25,6 +25,7 @@ sans-serif; */
 body {
     background-color: var(--white-clr);
     overflow-x: hidden;
+
 }
 
 .sr-only {
@@ -33,6 +34,7 @@ body {
 
 .logo {
     margin: 2rem;
+    margin-left: 0;
 }
 
 .flex {
@@ -43,6 +45,8 @@ body {
 .primary-header {
     align-items: center;
     justify-content: space-between;
+    font-family: 'Alata',
+        sans-serif;
 }
 
 .mobile-nav-toggle {
@@ -109,9 +113,78 @@ body {
     }
 }
 
+.container {
+    --max-width: 1174px;
+    --container-padding: 1rem;
+
+    width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+    margin-inline: auto;
+}
+
 .hero-container {
     background-image: url(images/desktop/image-hero.jpg);
-    /* background-position: center; */
     background-size: cover;
     background-repeat: no-repeat;
+    padding-top: 2em;
+    padding-bottom: 8em;
+    position: relative;
+}
+
+.hero-container::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: .2;
+    background-color: var(--black-clr);
+    z-index: -1;
+}
+
+/* There is a backdrop on the hero image */
+
+.primary-navigation a {
+    color: var(--white-clr);
+    font-size: 15px;
+}
+
+.primary-navigation li {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-inline-end: 1.3em;
+    cursor: pointer;
+}
+
+.primary-navigation li a::after {
+    content: "";
+    display: block;
+    height: 2.5px;
+    width: 0;
+    background-color: var(--white-clr);
+    position: absolute;
+    bottom: -7px;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
+.primary-navigation li:hover a::after {
+    width: 50%;
+}
+
+.hero-h1-container {
+    border: 3px solid var(--white-clr);
+    max-width: 58%;
+    margin-inline: 0;
+    padding: 1.5em 2em;
+    margin-top: 6em;
+}
+
+.hero-h1 {
+    text-transform: uppercase;
+    font-family: 'Josefin Sans',
+        sans-serif;
+    font-size: 4.5rem;
+    color: var(--white-clr);
+    font-weight: 300;
 }
