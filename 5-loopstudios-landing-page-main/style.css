@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white-clr: hsl(0, 0%, 100%);
+    --black-clr: hsl(0, 0%, 0%);
+    --dark-gray-clr: hsl(0, 0%, 55%);
+    --very-dark-gray-clr: hsl(0, 0%, 41%);
+}
+
+/* ================= */
+/* font-family: 'Alata',
+sans-serif;
+font-family: 'Josefin Sans',
+sans-serif; */
+/* ================== */
+
+body {
+    background-color: var(--white-clr);
+    overflow-x: hidden;
+}
+
+.sr-only {
+    display: none;
+}
+
+.logo {
+    margin: 2rem;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    padding-inline-end: 1rem;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+@media screen and (max-width:35em) {
+
+    /* Customizing the primary navigation for mobile screens */
+    .primary-navigation {
+        --gap: 1.5em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 0;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+
+        background-color: var(--black-clr);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    /* Making the primary navigation visible when the [data-visible] attribute is set to true */
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    /* Adjusting the logo for mobile screens */
+    .logo {
+        position: absolute;
+        z-index: 9999;
+    }
+
+    /* Styles for the mobile navigation toggle button */
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background-image: url(images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: 0;
+        top: 2.5rem;
+        right: 2rem;
+        z-index: 9999;
+        background-color: transparent;
+    }
+
+    /* Changing the mobile navigation toggle button icon when expanded */
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(images/icon-close.svg);
+    }
+}
+
+.hero-container {
+    background-image: url(images/desktop/image-hero.jpg);
+    /* background-position: center; */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
