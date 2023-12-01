@@ -21,17 +21,9 @@ img {
     --very-dark-gray-clr: hsl(0, 0%, 41%);
 }
 
-/* ================= */
-/* font-family: 'Alata',
-sans-serif;
-font-family: 'Josefin Sans',
-sans-serif; */
-/* ================== */
-
 body {
     background-color: var(--white-clr);
     overflow-x: hidden;
-
 }
 
 .sr-only {
@@ -95,15 +87,20 @@ body {
 }
 
 .primary-navigation li,
-.secondary-navigation li {
+.secondary-navigation li,
+.social-links li {
     display: flex;
     position: relative;
     margin-inline-end: 1.3em;
     cursor: pointer;
+    font-family: 'Josefin Sans',
+        sans-serif;
+    ;
 }
 
 .primary-navigation li a::after,
-.secondary-navigation li a::after {
+.secondary-navigation li a::after,
+.social-links li a::after {
     content: "";
     display: block;
     height: 2.5px;
@@ -116,7 +113,8 @@ body {
 }
 
 .primary-navigation li:hover a::after,
-.secondary-navigation li:hover a::after {
+.secondary-navigation li:hover a::after,
+.social-links li:hover a::after {
     width: 50%;
 }
 
@@ -202,7 +200,7 @@ body {
 .creations-section .btn:hover {
     color: var(--white-clr);
     background-color: var(--black-clr);
-    border: 0;
+    border-color: transparent;
 }
 
 .creations-section ul {
@@ -304,19 +302,27 @@ body {
     justify-content: space-between;
 }
 
+.logo-and-secondary-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer .logo-container img {
+    margin: 0;
+    margin-bottom: 1.3em;
+}
+
 .social-links-and-copyrights {
     display: flex;
     gap: 2em;
     flex-direction: column;
-    position: relative;
 }
 
 .social-links {
-    position: absolute;
     display: flex;
     align-items: center;
-    right: 0;
-    top: 0;
+    justify-content: flex-end;
 }
 
 .social-links li {
@@ -377,7 +383,7 @@ body {
     }
 
     /* Adjusting the logo for mobile screens */
-    .logo {
+    .hero-container .logo {
         position: absolute;
         z-index: 9999;
         margin: 0;
@@ -483,5 +489,36 @@ body {
         margin-top: 3em;
         width: 40%;
         padding: .8em 1em;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondary-navigation {
+        flex-direction: column;
+        margin-top: 2em;
+    }
+
+    .secondary-navigation li {
+        display: block;
+    }
+
+    .footer .logo-container {
+        margin-top: 2em;
+    }
+
+    .secondary-navigation li {
+        text-align: center;
+    }
+
+    .secondary-navigation {
+        padding-inline-end: 0;
+    }
+
+    .social-links {
+        margin-top: 3em;
+        justify-content: center;
     }
 }
