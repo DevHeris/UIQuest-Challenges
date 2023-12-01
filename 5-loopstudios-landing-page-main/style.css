@@ -141,7 +141,7 @@ body {
 .overview {
     background-color: var(--white-clr);
     position: absolute;
-    top: 44%;
+    bottom: 12%;
     left: 48.5%;
     padding: clamp(2.5em, 3vw, 5em);
     font-family: 'Josefin Sans',
@@ -184,7 +184,7 @@ body {
     grid-column: 2/3;
     text-transform: uppercase;
     background-color: transparent;
-    border: 1.5px solid var(--very-dark-gray-clr);
+    border: 1.5px solid var(--black-clr);
     color: var(--black-clr);
     letter-spacing: 1.5px;
     font-weight: bold;
@@ -209,13 +209,12 @@ body {
     gap: 2em 1.7em;
 }
 
-
 .creations-section .card {
     position: relative;
     font-family: 'Josefin Sans',
         sans-serif;
     padding: 20em 2em 1.9em 2em;
-    max-width: 17em;
+    max-width: 21em;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
@@ -244,23 +243,20 @@ body {
     z-index: 1;
 }
 
-
 .creations-section .name {
     color: var(--white-clr);
     text-transform: uppercase;
     font-size: clamp(1.5rem, 2.5vw, 3.5rem);
     font-weight: 300;
+    text-align: left;
 }
 
 .creations-section .card:hover {
     background-size: 110% 110%;
-
 }
-
 
 .creations-section ul>.card:first-child {
     background-image: url(images/desktop/image-deep-earth.jpg);
-
 }
 
 .creations-section ul>.card:nth-child(2) {
@@ -289,6 +285,16 @@ body {
 
 .creations-section ul>.card:last-child {
     background-image: url(images/desktop/image-fisheye.jpg);
+}
+
+@media (max-width:75.4375em) {
+    .creations-section ul {
+        justify-content: center;
+    }
+
+    .creations-section .card {
+        padding: 25em 2em 1.9em 2em;
+    }
 }
 
 @media (max-width:60.5625em) {
@@ -367,19 +373,75 @@ body {
         position: absolute;
         top: 20%;
     }
-
 }
 
 @media (max-width:47.75em) {
     .overview-section {
         display: flex;
         flex-direction: column;
-        padding: 7em 0;
+        padding: 7em 0 0 0;
     }
 
     .overview {
         position: relative;
         left: 0;
         text-align: center;
+    }
+
+    .creations-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .creations-section .btn {
+        order: 1;
+    }
+
+    .creations-section .card-container {
+        margin-top: 1em;
+    }
+
+    .creations-section .card {
+        padding: 4em 1.5em 1.5em 1.5em;
+        max-width: 100%;
+    }
+
+    .creations-section ul>.card:first-child {
+        background-image: url(images/mobile/image-deep-earth.jpg);
+    }
+
+    .creations-section ul>.card:nth-child(2) {
+        background-image: url(images/mobile/image-night-arcade.jpg);
+    }
+
+    .creations-section ul>.card:nth-child(3) {
+        background-image: url(images/mobile/image-soccer-team.jpg);
+    }
+
+    .creations-section ul>.card:nth-child(4) {
+        background-image: url(images/mobile/image-grid.jpg);
+    }
+
+    .creations-section ul>.card:nth-child(5) {
+        background-image: url(images/mobile/image-from-above.jpg);
+    }
+
+    .creations-section ul>.card:nth-child(6) {
+        background-image: url(images/mobile/image-pocket-borealis.jpg);
+    }
+
+    .creations-section ul>.card:nth-child(7) {
+        background-image: url(images/mobile/image-curiosity.jpg);
+    }
+
+    .creations-section ul>.card:last-child {
+        background-image: url(images/mobile/image-fisheye.jpg);
+    }
+
+    .creations-section .btn {
+        margin-top: 3em;
+        width: 40%;
+        padding: .8em 1em;
     }
 }
