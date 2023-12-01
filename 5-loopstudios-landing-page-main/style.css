@@ -150,8 +150,9 @@ body {
 
 .overview>h2 {
     text-transform: uppercase;
-    font-size: clamp(2rem, 3vw, 4rem);
+    font-size: clamp(1.9rem, 3vw, 4rem);
     color: var(--black-clr);
+    font-weight: 300;
 }
 
 .overview>p {
@@ -163,6 +164,133 @@ body {
     line-height: 1.7;
 }
 
+.creations-section {
+    display: grid;
+    grid-template-columns: 1fr .15fr;
+    font-family: 'Josefin Sans',
+        sans-serif;
+    justify-content: center;
+}
+
+.creations-section h2 {
+    text-transform: uppercase;
+    grid-column: 1/2;
+    font-size: clamp(1.9rem, 3vw, 4rem);
+    font-weight: 300;
+    color: var(--black-clr);
+}
+
+.creations-section .btn {
+    grid-column: 2/3;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1.5px solid var(--very-dark-gray-clr);
+    color: var(--black-clr);
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: all .5s linear
+}
+
+.creations-section .btn:hover {
+    color: var(--white-clr);
+    background-color: var(--black-clr);
+    border: 0;
+}
+
+.creations-section ul {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-top: 4em;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em 1.7em;
+}
+
+
+.creations-section .card {
+    position: relative;
+    font-family: 'Josefin Sans',
+        sans-serif;
+    padding: 20em 2em 1.9em 2em;
+    max-width: 17em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: flex-end;
+    flex: 1 1 17rem;
+    transition: background-size .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.creations-section .card::after {
+    opacity: 1;
+}
+
+.creations-section .card:hover::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: var(--white-clr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .6;
+}
+
+.creations-section .card:hover .name {
+    color: var(--black-clr);
+    z-index: 1;
+}
+
+
+.creations-section .name {
+    color: var(--white-clr);
+    text-transform: uppercase;
+    font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+    font-weight: 300;
+}
+
+.creations-section .card:hover {
+    background-size: 110% 110%;
+
+}
+
+
+.creations-section ul>.card:first-child {
+    background-image: url(images/desktop/image-deep-earth.jpg);
+
+}
+
+.creations-section ul>.card:nth-child(2) {
+    background-image: url(images/desktop/image-night-arcade.jpg);
+}
+
+.creations-section ul>.card:nth-child(3) {
+    background-image: url(images/desktop/image-soccer-team.jpg);
+}
+
+.creations-section ul>.card:nth-child(4) {
+    background-image: url(images/desktop/image-grid.jpg);
+}
+
+.creations-section ul>.card:nth-child(5) {
+    background-image: url(images/desktop/image-from-above.jpg);
+}
+
+.creations-section ul>.card:nth-child(6) {
+    background-image: url(images/desktop/image-pocket-borealis.jpg);
+}
+
+.creations-section ul>.card:nth-child(7) {
+    background-image: url(images/desktop/image-curiosity.jpg);
+}
+
+.creations-section ul>.card:last-child {
+    background-image: url(images/desktop/image-fisheye.jpg);
+}
+
 @media (max-width:60.5625em) {
     .hero-h1-container {
         max-width: 100%;
@@ -171,6 +299,10 @@ body {
 
     .hero-h1 {
         font-size: clamp(2rem, 10vw, 4.5rem);
+    }
+
+    .creations-section ul {
+        justify-content: space-evenly;
     }
 }
 
@@ -248,5 +380,6 @@ body {
     .overview {
         position: relative;
         left: 0;
+        text-align: center;
     }
 }
