@@ -68,62 +68,6 @@ body {
     text-decoration: none;
 }
 
-@media screen and (max-width:35em) {
-
-    /* Customizing the primary navigation for mobile screens */
-    .primary-navigation {
-        --gap: 1.5em;
-
-        position: fixed;
-        z-index: 1000;
-        inset: 0 0 0 0;
-
-        flex-direction: column;
-        padding: min(30vh, 10rem) 2em;
-
-        background-color: var(--black-clr);
-
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
-    }
-
-    /* Making the primary navigation visible when the [data-visible] attribute is set to true */
-    .primary-navigation[data-visible="true"] {
-        transform: translateX(0%);
-    }
-
-    /* Adjusting the logo for mobile screens */
-    .logo {
-        position: absolute;
-        z-index: 9999;
-    }
-
-    /* Styles for the mobile navigation toggle button */
-    .mobile-nav-toggle {
-        display: block;
-        position: absolute;
-        background-image: url(images/icon-hamburger.svg);
-        background-repeat: no-repeat;
-        width: 2rem;
-        aspect-ratio: 1;
-        border: 0;
-        top: 2.5rem;
-        right: 2rem;
-        z-index: 9999;
-        background-color: transparent;
-    }
-
-    /* Changing the mobile navigation toggle button icon when expanded */
-    .mobile-nav-toggle[aria-expanded="true"] {
-        background-image: url(images/icon-close.svg);
-    }
-
-    .logo {
-        margin: 0;
-    }
-
-}
-
 .container {
     --max-width: 1174px;
     --container-padding: 1rem;
@@ -173,9 +117,10 @@ body {
 .hero-h1-container {
     border: 3px solid var(--white-clr);
     max-width: 58%;
-    margin-inline: 0;
+    margin-inline: auto;
     padding: 1.5em 2em;
     margin-top: 6em;
+    margin-left: 0;
 }
 
 .hero-h1 {
@@ -193,30 +138,115 @@ body {
     position: relative;
 }
 
-
-
 .overview {
     background-color: var(--white-clr);
     position: absolute;
-    top: 33%;
+    top: 44%;
     left: 48.5%;
-    padding: 5em;
+    padding: clamp(2.5em, 3vw, 5em);
     font-family: 'Josefin Sans',
         sans-serif;
 }
 
 .overview>h2 {
     text-transform: uppercase;
-    font-size: 3em;
+    font-size: clamp(2rem, 3vw, 4rem);
     color: var(--black-clr);
 }
 
-@media (max-width:969px) {
+.overview>p {
+    margin: 1.5em 0;
+    color: var(--very-dark-gray-clr);
+    font-family: 'Alata',
+        sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+@media (max-width:60.5625em) {
     .hero-h1-container {
         max-width: 100%;
+        margin-left: auto;
     }
 
     .hero-h1 {
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-size: clamp(2rem, 10vw, 4.5rem);
+    }
+}
+
+@media screen and (max-width:35em) {
+
+    /* Customizing the primary navigation for mobile screens */
+    .primary-navigation {
+        --gap: 1.5em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 0;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+
+        background-color: var(--black-clr);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    /* Making the primary navigation visible when the [data-visible] attribute is set to true */
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    /* Adjusting the logo for mobile screens */
+    .logo {
+        position: absolute;
+        z-index: 9999;
+        margin: 0;
+    }
+
+    /* Styles for the mobile navigation toggle button */
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background-image: url(images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: 0;
+        top: 2.5rem;
+        right: 1rem;
+        z-index: 9999;
+        background-color: transparent;
+    }
+
+    /* Changing the mobile navigation toggle button icon when expanded */
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(images/icon-close.svg);
+    }
+
+    .hero-container {
+        background-image: url(images/mobile/image-hero.jpg);
+        height: 70vh;
+    }
+
+    .hero-h1-container {
+        position: absolute;
+        top: 20%;
+    }
+
+}
+
+@media (max-width:47.75em) {
+    .overview-section {
+        display: flex;
+        flex-direction: column;
+        padding: 7em 0;
+    }
+
+    .overview {
+        position: relative;
+        left: 0;
     }
 }
