@@ -126,18 +126,18 @@ input:checked+.slider:before {
     padding: 2em 4em;
     border-radius: .25em;
     width: 16em;
-    max-width: 20em;
 }
 
-.follower-card:first-child,
-.follower-card:nth-child(2) {
+.follower-card:first-child {
     border-top: 4.5px solid var(--facebook);
 }
 
+.follower-card:nth-child(2) {
+    border-top: 4.5px solid var(--twitter);
+
+}
+
 .follower-card:nth-child(3) {
-    /* border-top: 4.5px solid;
-        border-image: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
-        border-image-slice: 1; */
     position: relative;
 }
 
@@ -191,4 +191,36 @@ input:checked+.slider:before {
 
 .follower-card:last-child .audience-growth-rate {
     color: var(--bright-red);
+}
+
+@media (max-width:37.0625em) {
+    .follower-card {
+        width: 100%;
+    }
+
+    .header-content-container {
+        width: 100%;
+    }
+
+    .sm-dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-heading {
+        margin-bottom: .4em;
+    }
+
+    .total-follower-count {
+        font-weight: bold;
+        padding-bottom: 1em;
+        border-bottom: 1px solid hsl(230, 22%, 74%);
+        margin-bottom: 1.3em;
+    }
+
+    .theme-switch-toggle-container {
+        justify-content: space-between;
+        width: 100%;
+        font-weight: bold;
+    }
 }
