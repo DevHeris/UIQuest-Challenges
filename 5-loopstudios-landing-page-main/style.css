@@ -96,6 +96,7 @@ body {
     font-family: 'Josefin Sans',
         sans-serif;
     ;
+    font-weight: bold;
 }
 
 .primary-navigation li a::after,
@@ -295,6 +296,9 @@ body {
 .footer {
     background-color: var(--black-clr);
     padding: 2em 0;
+    font-family: 'Josefin Sans',
+        sans-serif;
+    ;
 }
 
 .footer .container {
@@ -330,7 +334,8 @@ body {
 }
 
 .copyrights {
-    color: var(--white-clr);
+    color: var(--very-dark-gray-clr);
+    font-weight: bold;
 }
 
 @media (max-width:75.4375em) {
@@ -418,6 +423,20 @@ body {
     .hero-h1-container {
         position: absolute;
         top: 20%;
+    }
+
+    .primary-navigation li>a {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    .primary-navigation li a::after {
+        left: 0%;
+    }
+
+    .primary-navigation li:hover a::after {
+        width: 20%;
     }
 }
 
@@ -520,5 +539,13 @@ body {
     .social-links {
         margin-top: 3em;
         justify-content: center;
+    }
+
+    .secondary-navigation li a::after {
+        left: 40%;
+    }
+
+    .secondary-navigation li:hover a::after {
+        width: 22%;
     }
 }
