@@ -79,19 +79,23 @@ img {
         z-index: 1000;
         inset: 0 0 0 0;
 
-        flex-direction: column;
-        padding: min(30vh, 10rem) 2em;
 
+        flex-direction: column-reverse;
+        padding: min(30vh, 10rem) 2em;
+        padding-left: 14em;
         background-color: #333;
 
-        transform: translateX(30%);
+        transform: translateX(-100%);
         transition: transform 350ms ease-out;
+
+        justify-content: flex-end;
     }
 
     /* Making the primary navigation visible when the [data-visible] attribute is set to true */
     .primary-navigation[data-visible="true"] {
-        transform: translateX(100%);
+        transform: translateX(-30%);
     }
+
 
     .logo {
         position: absolute;
@@ -107,7 +111,7 @@ img {
         aspect-ratio: 1;
         border: 0;
         top: 2.5rem;
-        right: 2rem;
+        left: 2rem;
         z-index: 9999;
         background-color: transparent;
     }

@@ -24,27 +24,37 @@
     </button>
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
-        <li class="active">
-          <a href="#">Collections</a>
-        </li>
-        <li>
-          <a href="#">Men</a>
-        </li>
-        <li>
-          <a href="#">Women</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#"> Contact</a>
-        </li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
 
     <div class="header-user-container">
       <div class="cart-container">
         <img src="images/icon-cart.svg" alt="a cart" title="a cart icon" class="cart-icon" id="cart-icon">
+        <div class="cart-sub-menu-wrap">
+          <div class="sub-menu">
+            <p>Cart</p>
+            <div class="cart-content">
+              <div class="shoe-img-container">
+                <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
+              </div>
+              <div>
+                <p>Fall Limited Edition Sneakers</p>
+                <p class="total-price-container">
+                  $125.00 x <span class="chosen-quantity">3</span> <span class="total-price">$375.00</span>
+                </p>
+              </div>
+              <div class="delete-icon">
+                <img src="images/icon-delete.svg" alt="delete from cart">
+              </div>
+              <button type="submit">Checkout</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="profile-pic-container">
@@ -53,19 +63,54 @@
     </div>
   </header>
 
-  Sneaker Company
+  <main class="sneakers-main">
+    <div class="img-gallery">
+      <div class="large-product-image">
+        <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" class="large-product-1">
+      </div>
+      <ul class="thumbnail-images">
+        <li id="shoe-preview1"><img src="images/image-product-1-thumbnail.jpg" alt="shoe-preview1 thumbnail"></li>
+        <li id="shoe-preview2"> <img src="images/image-product-2-thumbnail.jpg" alt="shoe preview2 thumbnail"></li>
+        <li id="shoe-preview3"><img src="images/image-product-3-thumbnail.jpg" alt="shoe preview3 thumbnail"></li>
+        <li id="shoe-preview4"><img src="images/image-product-4-thumbnail.jpg" alt="shoe preview4 thumbnail"></li>
+      </ul>
+    </div>
 
-  Fall Limited Edition Sneakers
+    <section class="product-info-container">
+      <h5>Sneaker Company</h5>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a
-  durable rubber outer sole, they'll withstand everything the weather can offer.
+      <h2>Fall Limited Edition Sneakers</h2>
 
-  $125.00
-  50%
-  $250.00
+      <p class="shoe-info-paragraph">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they'll withstand everything the weather can offer.
+      </p>
 
-  0
-  Add to cart
+      <div class="price-info-container">
+        <div class="new-price">
+          <span class="discounted-price">$125.00</span>
+          <span class="discount-percentage">50%</span>
+        </div>
+        <p class="original-price">
+          $250.00
+        </p>
+      </div>
+
+      <div class="quantity-add-to-cart-container">
+        <div class="quantity-container">
+          <span id="reduce" class="reduce"><img src="images/icon-minus.svg" alt="reduce quantity"></span>
+          <span id="quantity" class="quantity">0</span>
+          <span id="increase" class="increase"><img src="images/icon-plus.svg" alt="increase quantity"></span>
+        </div>
+
+        <button class="add-btn" id="add-btn" type="submit">
+          <img src="images/icon-cart.svg" alt="cart icon">
+          <span>Add to cart</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
 </body>
 
 </html>
