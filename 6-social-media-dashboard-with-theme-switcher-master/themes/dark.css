@@ -9,3 +9,48 @@
     --text: hsl(228, 34%, 66%);
     --white-text: hsl(0, 0%, 100%);
 }
+
+body {
+    background-color: var(--bg);
+}
+
+.sm-dashboard-header::after {
+    background-color: var(--top-bg-Pattern);
+}
+
+.follower-card,
+.overview-card {
+    background-color: var(--card-bg);
+}
+
+.follower-card:hover,
+.overview-card:hover {
+    background-color: hsla(229, 19%, 33%, 0.544);
+}
+
+.follower-count,
+.sm-dashboard-overview h4,
+.count,
+.dashboard-heading {
+    color: var(--white-text);
+}
+
+.follower-count+span,
+.social-metric-container,
+.username,
+.theme-switch-toggle-container>p,
+.total-follower-count {
+    color: var(--text);
+}
+
+.slider {
+    background: var(--toggle);
+}
+
+.slider::before {
+    background: var(--card-bg);
+}
+
+.theme-switch-toggle-container:hover p {
+    color: var(--white-text);
+}

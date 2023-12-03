@@ -7,5 +7,55 @@
     --top-bg-Pattern: hsl(225, 100%, 98%);
     --card-bg: hsl(227, 47%, 96%);
     --text: hsl(228, 12%, 44%);
-    --blue-text: hsl(230, 17%, 14%)
+    --blue-text: hsl(230, 17%, 14%);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.sm-dashboard-header::after {
+    background-color: var(--top-bg-Pattern);
+}
+
+.follower-card,
+.overview-card {
+    background-color: var(--card-bg);
+}
+
+.follower-card:hover,
+.overview-card:hover {
+    background-color: hsl(229, 36%, 85%)
+}
+
+.follower-count,
+.sm-dashboard-overview h4,
+.count,
+.dashboard-heading {
+    color: var(--blue-text);
+}
+
+.follower-count+span,
+.social-metric-container,
+.username,
+.theme-switch-toggle-container>p,
+.total-follower-count {
+    color: var(--text);
+}
+
+.slider {
+    background: var(--toggle);
+}
+
+.theme-switch-toggle-container:hover input:checked+.slider {
+    background: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+.slider::before {
+    background: var(--card-bg);
+}
+
+input:checked+.slider {
+    background-color: var(--toggle);
+
 }
