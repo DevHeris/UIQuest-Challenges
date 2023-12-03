@@ -1,0 +1,118 @@
+:root {
+    /* Primary Colors */
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+
+    /* //Neutral Colors */
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+
+    /* black (with 75% opacity for lightbox background) */
+    --black: hsl(0, 0%, 0%);
+}
+
+/* Resetting default styles for all elements */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Helper class to visually hide elements but keep them accessible for screen readers */
+.sr-only {
+    display: none;
+}
+
+.logo {
+    margin: 2rem;
+}
+
+/* Flex utility class for easy flex container styling */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+/* Styles for the primary navigation list */
+.primary-navigation {
+    list-style: none;
+    padding-inline-end: 1em;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Media query for screens with a maximum width of 35em (560px) - Mobile First Approach */
+@media screen and (max-width:35em) {
+    .primary-navigation {
+        --gap: 1.5em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 0;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+
+        background-color: #333;
+
+        transform: translateX(30%);
+        transition: transform 350ms ease-out;
+    }
+
+    /* Making the primary navigation visible when the [data-visible] attribute is set to true */
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(100%);
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 9999;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background-image: url(images/icon-menu.svg);
+        background-repeat: no-repeat;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: 0;
+        top: 2.5rem;
+        right: 2rem;
+        z-index: 9999;
+        background-color: transparent;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(images/icon-close.svg);
+    }
+}
