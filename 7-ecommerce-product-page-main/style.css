@@ -12,6 +12,9 @@
 
     /* black (with 75% opacity for lightbox background) */
     --black: hsl(0, 0%, 0%);
+
+    --max-width: 1115px;
+    --padding: 2.5rem;
 }
 
 /* Resetting default styles for all elements */
@@ -51,15 +54,17 @@ img {
 /* Flex utility class for easy flex container styling */
 .flex {
     display: flex;
-    gap: var(--gap, 2rem);
+    gap: var(--gap, clamp(1rem, 3vw, 2rem));
 }
 
 .primary-header {
     align-items: center;
     justify-content: space-between;
-    margin: 1.2em 10em;
+    margin: 0 clamp(1em, 3vw, 10em);
     border-bottom: 1px solid var(--grayish-blue);
     padding-bottom: 1em;
+    width: min(var(--max-width), 100% - (var(--padding) * 0.5));
+    margin-inline: auto;
 }
 
 .logo-and-nav {
@@ -71,15 +76,12 @@ img {
 .header-user-container {
     display: flex;
     align-items: center;
-}
-
-.profile-pic-container {
-    display: flex;
     justify-content: flex-end;
 }
 
-.profile-pic {
-    width: 50%;
+.profile-pic-container {
+    max-width: 55%;
+    padding-left: 2em;
 }
 
 .mobile-nav-toggle {
@@ -95,10 +97,11 @@ img {
 .primary-navigation a {
     text-decoration: none;
     color: var(--dark-grayish-blue);
+    font-size: clamp(.8em, 3vw, 1em);
 }
 
 /* Media query for screens with a maximum width of 35em (560px) - Mobile First Approach */
-@media screen and (max-width:35em) {
+@media screen and (max-width:43em) {
     .primary-navigation {
         --gap: 1.5em;
 
@@ -127,7 +130,16 @@ img {
     .logo {
         position: absolute;
         z-index: 9999;
+        margin: 0;
+        left: 16%;
+        top: 1.8%;
     }
+
+    .profile-pic-container {
+        max-width: 45%;
+        padding-inline: .8em;
+    }
+
 
     .mobile-nav-toggle {
         display: block;
@@ -137,7 +149,7 @@ img {
         width: 2rem;
         aspect-ratio: 1;
         border: 0;
-        top: 2.5rem;
+        top: 2%;
         left: 2rem;
         z-index: 9999;
         background-color: transparent;
@@ -145,5 +157,10 @@ img {
 
     .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url(images/icon-close.svg);
+    }
+
+    .primary-header {
+        padding: 1.3em 0;
+        border-bottom: none;
     }
 }
