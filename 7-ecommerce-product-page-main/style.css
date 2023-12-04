@@ -39,19 +39,47 @@ img {
     display: none;
 }
 
+.show {
+    display: none;
+}
+
 .logo {
     margin: 2rem;
+    margin-left: 0;
 }
 
 /* Flex utility class for easy flex container styling */
 .flex {
     display: flex;
-    gap: var(--gap, 1rem);
+    gap: var(--gap, 2rem);
 }
 
 .primary-header {
     align-items: center;
     justify-content: space-between;
+    margin: 1.2em 10em;
+    border-bottom: 1px solid var(--grayish-blue);
+    padding-bottom: 1em;
+}
+
+.logo-and-nav {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.header-user-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-pic {
+    width: 50%;
 }
 
 .mobile-nav-toggle {
@@ -66,8 +94,7 @@ img {
 
 .primary-navigation a {
     text-decoration: none;
-    text-transform: uppercase;
-    color: white;
+    color: var(--dark-grayish-blue);
 }
 
 /* Media query for screens with a maximum width of 35em (560px) - Mobile First Approach */
