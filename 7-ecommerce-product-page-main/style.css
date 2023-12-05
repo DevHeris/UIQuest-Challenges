@@ -27,7 +27,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 img {
@@ -111,8 +111,10 @@ ul {
     margin-inline: auto;
     display: flex;
     align-items: center;
-    gap: 7em;
+    gap: clamp(2.5em, 8vw, 7em);
 }
+
+/* Img gallery */
 
 .large-product {
     border-radius: 1em;
@@ -138,6 +140,96 @@ ul {
     opacity: 0.5;
 }
 
+/* Product info container */
+
+.product-info-container>h5 {
+    color: var(--orange);
+    text-transform: uppercase;
+    padding: 1.5em 0;
+    font-weight: bold;
+}
+
+.product-info-container>h2 {
+    font-size: clamp(1.5em, 5vw, 2.5em);
+    color: var(--very-dark-blue);
+    padding-bottom: .8em;
+}
+
+.shoe-info-paragraph {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 1em
+}
+
+.price-info-container {
+    padding: .5em 0;
+}
+
+.new-price {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.discounted-price {
+    font-size: 1.5em;
+    color: var(--very-dark-blue);
+    font-weight: bold;
+}
+
+.discount-percentage {
+    background-color: var(--pale-orange);
+    color: var(--orange);
+    font-weight: bold;
+    padding: .1em .5em;
+    border-radius: .3em;
+}
+
+.original-price {
+    display: block;
+    color: var(--grayish-blue);
+    padding: .5em 0;
+    font-size: .9em;
+}
+
+.quantity-add-to-cart-container {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.quantity-container {
+    border-radius: .8em;
+    background-color: var(--light-grayish-blue);
+    padding: 1em .9em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
+.add-btn {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+    padding: 1.2em 4.5em;
+    border: none;
+    border-radius: .8em;
+    box-shadow: 2px 41px 75px -4px rgba(255, 125, 26, 0.36);
+    -webkit-box-shadow: 2px 41px 75px -4px rgba(255, 125, 26, 0.36);
+    -moz-box-shadow: 2px 41px 75px -4px rgba(255, 125, 26, 0.36);
+}
+
+.add-btn span {
+    font-size: 1.2em;
+}
+
+.decrease,
+.increase {
+    cursor: pointer;
+}
 
 /* Media queries for mobile view */
 @media screen and (max-width:43em) {
