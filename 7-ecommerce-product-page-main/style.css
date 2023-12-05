@@ -13,7 +13,6 @@
     /* black (with 75% opacity for lightbox background) */
     --black: hsl(0, 0%, 0%);
 
-    --max-width: 1115px;
     --padding: 2.5rem;
 }
 
@@ -37,6 +36,10 @@ img {
     display: block;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* Helper class to visually hide elements but keep them accessible for screen readers */
 .sr-only {
     display: none;
@@ -58,12 +61,12 @@ img {
 }
 
 .primary-header {
+    --max-width: 1115px;
     align-items: center;
     justify-content: space-between;
-    margin: 0 clamp(1em, 3vw, 10em);
     border-bottom: 1px solid var(--grayish-blue);
     padding-bottom: 1em;
-    width: min(var(--max-width), 100% - (var(--padding) * 0.5));
+    width: min(var(--max-width), 100% - (var(--padding) * 0.8));
     margin-inline: auto;
 }
 
@@ -100,24 +103,55 @@ img {
     font-size: clamp(.8em, 3vw, 1em);
 }
 
-/* Media query for screens with a maximum width of 35em (560px) - Mobile First Approach */
+/* Sneakers-main section styling */
+.sneakers-main {
+    --max-width: 1000px;
+    width: min(var(--max-width), 100% - (var(--padding) * 2));
+    margin: 5em 0;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 7em;
+}
+
+.large-product {
+    border-radius: 1em;
+}
+
+.thumbnail-images {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    gap: 1.5em;
+}
+
+.thumbnail-images>li img,
+.thumbnail-images>li {
+    border-radius: .6em;
+}
+
+.active {
+    border: 2px solid var(--orange);
+}
+
+.active img {
+    opacity: 0.5;
+}
+
+
+/* Media queries for mobile view */
 @media screen and (max-width:43em) {
     .primary-navigation {
         --gap: 1.5em;
-
         position: fixed;
         z-index: 1000;
         inset: 0 0 0 0;
-
-
         flex-direction: column-reverse;
         padding: min(30vh, 10rem) 2em;
         padding-left: 14em;
         background-color: #333;
-
         transform: translateX(-100%);
         transition: transform 350ms ease-out;
-
         justify-content: flex-end;
     }
 
@@ -125,7 +159,6 @@ img {
     .primary-navigation[data-visible="true"] {
         transform: translateX(-30%);
     }
-
 
     .logo {
         position: absolute;
@@ -139,7 +172,6 @@ img {
         max-width: 45%;
         padding-inline: .8em;
     }
-
 
     .mobile-nav-toggle {
         display: block;
