@@ -64,8 +64,8 @@ ul {
     --max-width: 1115px;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--grayish-blue);
-    padding-bottom: 1em;
+    border-bottom: 1px solid hsla(220, 14%, 75%, 0.245);
+    padding-bottom: .8em;
     width: min(var(--max-width), 100% - (var(--padding) * 0.8));
     margin-inline: auto;
 }
@@ -76,7 +76,7 @@ ul {
     gap: 2em;
 }
 
-.header-user-container {
+.cart-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -101,6 +101,110 @@ ul {
     text-decoration: none;
     color: var(--dark-grayish-blue);
     font-size: clamp(.8em, 3vw, 1em);
+}
+
+.primary-navigation li {
+    position: relative;
+    cursor: pointer;
+}
+
+.primary-navigation li a::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0;
+    background-color: var(--orange);
+    position: absolute;
+    bottom: -225%;
+    left: 2%;
+    transition: width 0.3s ease;
+}
+
+.primary-navigation a:hover {
+    color: var(--very-dark-blue);
+}
+
+.primary-navigation li:hover a::after {
+    width: 100%;
+}
+
+.cart-icon {
+    cursor: pointer;
+}
+
+.has-submenu .sub-menu {
+    display: none;
+}
+
+.cart-container {
+    position: relative;
+}
+
+.has-submenu:hover .sub-menu {
+    display: flex;
+}
+
+.sub-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 120%;
+    left: -50%;
+    background-color: var(--white);
+    box-shadow: -9px 26px 68px -26px rgba(29, 32, 37, 0.66);
+    -webkit-box-shadow: -9px 26px 68px -26px rgba(29, 32, 37, 0.66);
+    -moz-box-shadow: -9px 26px 68px -26px rgba(29, 32, 37, 0.66);
+    width: 23em;
+    border-radius: .8em;
+}
+
+.delete-icon {
+    cursor: pointer;
+}
+
+.sub-menu>p {
+    padding: 1em;
+    border-bottom: 1px solid hsla(220, 14%, 75%, 0.273);
+    font-weight: bold;
+    color: var(--black);
+}
+
+.sub-menu {
+    color: var(--dark-grayish-blue);
+    font-size: .9em;
+}
+
+.sub-menu .cart-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr .6fr;
+    grid-template-rows: 1fr .5fr;
+    padding: 1em;
+    align-items: center;
+    grid-gap: 1em;
+}
+
+.shoe-name {
+    margin-bottom: .4em;
+}
+
+.total-price {
+    font-weight: bold;
+    color: var(--black);
+}
+
+.cart-content img {
+    border-radius: .52em;
+}
+
+.checkout-btn {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    grid-column: 1/4;
+    padding: 1em 2em;
+    border-radius: .7em;
+    cursor: pointer;
+    margin-bottom: .8em;
 }
 
 /* Sneakers-main section styling */

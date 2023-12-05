@@ -53,8 +53,9 @@
 
     <div class="header-user-container">
       <div class="cart-container">
-        <img src="images/icon-cart.svg" alt="a cart" title="a cart icon" class="cart-icon" id="cart-icon">
-        <!-- <div class="cart-sub-menu-wrap">
+        <div class="wrapper has-submenu">
+          <img src="images/icon-cart.svg" alt="a cart" title="a cart icon" class="cart-icon " id="cart-icon"
+            aria-expanded="false">
           <div class="sub-menu">
             <p>Cart</p>
             <div class="cart-content">
@@ -62,7 +63,7 @@
                 <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
               </div>
               <div>
-                <p>Fall Limited Edition Sneakers</p>
+                <p class="shoe-name">Fall Limited Edition Sneakers</p>
                 <p class="total-price-container">
                   $125.00 x <span class="chosen-quantity">3</span> <span class="total-price">$375.00</span>
                 </p>
@@ -70,15 +71,16 @@
               <div class="delete-icon">
                 <img src="images/icon-delete.svg" alt="delete from cart">
               </div>
-              <button type="submit">Checkout</button>
+              <button type="submit" class="checkout-btn">Checkout</button>
             </div>
-          </div> -->
-      </div>
+          </div>
+        </div>
 
-      <div class="profile-pic-container">
-        <img src="images/image-avatar.png" alt="User Profile Picture" class="profile-pic">
+
+        <div class="profile-pic-container">
+          <img src="images/image-avatar.png" alt="User Profile Picture" class="profile-pic">
+        </div>
       </div>
-    </div>
   </header>
 
   <main class="sneakers-main">
