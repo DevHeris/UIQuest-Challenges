@@ -141,7 +141,6 @@ ul {
 }
 
 /* Product info container */
-
 .product-info-container>h5 {
     color: var(--orange);
     text-transform: uppercase;
@@ -150,7 +149,7 @@ ul {
 }
 
 .product-info-container>h2 {
-    font-size: clamp(1.5em, 5vw, 2.5em);
+    font-size: clamp(1.6em, 5vw, 2.5em);
     color: var(--very-dark-blue);
     padding-bottom: .8em;
 }
@@ -214,12 +213,13 @@ ul {
     background-color: var(--orange);
     color: var(--white);
     font-weight: bold;
-    padding: 1.2em 4.5em;
+    padding: clamp(.5em, 4vw, 1.2em) clamp(.5em, 4vw, 4.5em);
     border: none;
     border-radius: .8em;
     box-shadow: 2px 41px 75px -4px rgba(255, 125, 26, 0.36);
     -webkit-box-shadow: 2px 41px 75px -4px rgba(255, 125, 26, 0.36);
     -moz-box-shadow: 2px 41px 75px -4px rgba(255, 125, 26, 0.36);
+    cursor: pointer;
 }
 
 .add-btn span {
@@ -247,7 +247,6 @@ ul {
         justify-content: flex-end;
     }
 
-    /* Making the primary navigation visible when the [data-visible] attribute is set to true */
     .primary-navigation[data-visible="true"] {
         transform: translateX(-30%);
     }
@@ -286,5 +285,45 @@ ul {
     .primary-header {
         padding: 1.3em 0;
         border-bottom: none;
+    }
+
+    .sneakers-main {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        gap: 0;
+    }
+
+    .large-product {
+        border-radius: 0;
+    }
+
+    .thumbnail-images {
+        display: none;
+    }
+
+    .product-info-container {
+        padding: 1.3em;
+    }
+
+    .product-info-container h5 {
+        padding-top: 0;
+    }
+
+    .price-info-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:977px) {
+    .quantity-add-to-cart-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-btn,
+    .quantity-container {
+        justify-content: center;
     }
 }
