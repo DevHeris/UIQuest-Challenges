@@ -7,6 +7,7 @@ const slides = document.querySelectorAll(".slide");
 const prevSlide = document.querySelector(".btn-prev");
 const nextSlide = document.querySelector(".btn-next");
 const thumbnails = document.querySelectorAll("#thumbnail");
+const cartLogo = document.querySelector(".cart");
 
 // ===================================
 // Mobile Navigation toggle
@@ -70,7 +71,6 @@ closeBtn.addEventListener("click", () => {
 // ========================================================================
 // Switch the large product image by clicking on the small thumbnail images
 // ========================================================================
-
 const updatelargeImage = (event) => {
   const largeImg = document.querySelector(".large-product");
   const clickedImg = event.currentTarget.firstElementChild;
@@ -89,3 +89,18 @@ const updatelargeImage = (event) => {
 thumbnails.forEach((img) => {
   img.addEventListener("click", updatelargeImage);
 });
+
+// ===================
+// Show cart on click
+// ===================
+const toggleCartBoxVisibility = () => {
+  if (cartLogo.classList.contains("has-submenu")) {
+    cartLogo.firstElementChild.setAttribute("aria-expanded", true);
+  } else {
+    cartLogo.firstElementChild.setAttribute("aria-expanded", false);
+  }
+
+  cartLogo.classList.toggle("has-submenu");
+};
+
+cartLogo.addEventListener("click", toggleCartBoxVisibility);
