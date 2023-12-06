@@ -404,7 +404,7 @@ ul {
 }
 
 .svg-close {
-    transform: scale(1.1);
+    transform: scale(1.4);
     transition: fill 0.3s ease;
 }
 
@@ -444,10 +444,10 @@ ul {
     width: 100%;
 }
 
-.btn {
+.control-btn {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     border: none;
     border-radius: 50%;
@@ -456,7 +456,25 @@ ul {
     background-color: #fff;
 }
 
-.btn:active {
+.lightbox-gallery-popup .thumbnail-images li {
+    position: relative;
+    opacity: 1;
+}
+
+.lightbox-gallery-popup .thumbnail-images .active::after,
+.lightbox-gallery-popup .thumbnail-images li:hover::after {
+    content: ' ';
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .6;
+    border-radius: .5em;
+}
+
+.control-btn:active {
     transform: scale(1.1);
 }
 
@@ -468,6 +486,21 @@ ul {
 .btn-next {
     top: 45%;
     right: 5em;
+}
+
+.btn-next path,
+.btn-next path,
+.btn-prev svg path,
+.btn-prev svg path,
+.svg-close path {
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.btn-next:hover path,
+.btn-next:active path,
+.btn-prev:hover svg path,
+.btn-prev:hover svg path {
+    stroke: var(--orange);
 }
 
 .popup {
