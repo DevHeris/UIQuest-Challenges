@@ -259,7 +259,6 @@ ul {
 .thumbnail-images li img:hover {
     opacity: .5;
     transform: scale(1.05);
-
 }
 
 .thumbnail-images>li img,
