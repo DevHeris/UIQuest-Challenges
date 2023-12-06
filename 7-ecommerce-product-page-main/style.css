@@ -48,9 +48,9 @@ ul {
     display: none;
 }
 
-/* .show {
+.hide {
     display: none;
-} */
+}
 
 .logo {
     margin: 2rem;
@@ -246,6 +246,7 @@ ul {
 /* Img gallery */
 .large-product {
     border-radius: 1em;
+    cursor: pointer;
 }
 
 .thumbnail-images {
@@ -425,6 +426,7 @@ ul {
     position: relative;
     overflow: hidden;
     display: flex;
+    border-radius: 1em;
 }
 
 .slide {
@@ -433,7 +435,6 @@ ul {
     height: auto;
     position: absolute;
     transition: all 0.5s;
-    /* margin: 1em; */
 }
 
 .slide img {

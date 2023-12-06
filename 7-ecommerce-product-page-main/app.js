@@ -76,3 +76,18 @@ prevSlide.addEventListener("click", function () {
     slide.style.transform = `translateX(${150 * (indx - curSlide)}%)`;
   });
 });
+
+// =================================================================
+// Open a lightbox gallery by clicking on the large product image
+// ==================================================================
+const largeProductImage = document.getElementById("large-product-image");
+const lightboxContainer = document.getElementById("lightbox-gallery-popup");
+const closeBtn = document.querySelector(".close-popup");
+
+largeProductImage.addEventListener("click", () => {
+  lightboxContainer.classList.toggle("hide");
+});
+
+closeBtn.addEventListener("click", () => {
+  lightboxContainer.classList.toggle("hide");
+});
