@@ -54,26 +54,6 @@ const updateSlideAndThumbnails = () => {
   });
 };
 
-// Event delegation for thumbnail clicks
-document
-  .querySelector(".thumbnail-images")
-  .addEventListener("click", (event) => {
-    const clickedThumbnail = event.target.closest("#lightbox-thumbnail");
-
-    if (clickedThumbnail) {
-      const newSrc = clickedThumbnail.querySelector("img").dataset.link;
-
-      // Update the current slide index
-      curSlide = Array.from(lightBoxThumbnails).indexOf(clickedThumbnail);
-
-      // Update the current slide image source
-      slides[curSlide].querySelector("img").src = `${newSrc}.jpg`;
-
-      // Update the slide and thumbnails
-      updateSlideAndThumbnails();
-    }
-  });
-
 nextSlide.addEventListener("click", () => {
   if (curSlide === maxSlide) {
     curSlide = 0;
@@ -90,18 +70,6 @@ prevSlide.addEventListener("click", () => {
     curSlide--;
   }
   updateSlideAndThumbnails();
-});
-
-// =================================================================
-// Open a lightbox gallery by clicking on the large product image
-// ==================================================================
-navToggle.addEventListener("click", toggleNav);
-largeProductImage.addEventListener("click", () => {
-  lightboxContainer.classList.toggle("hide");
-});
-
-closeBtn.addEventListener("click", () => {
-  lightboxContainer.classList.toggle("hide");
 });
 
 // ========================================================================
@@ -124,9 +92,25 @@ const updatelargeImage = (event) => {
   event.currentTarget.classList.add("active");
 };
 
-thumbnails.forEach((img) => {
-  img.addEventListener("click", updatelargeImage);
-});
+// Event delegation for lighbox thumbnail clicks
+document
+  .querySelector(".thumbnail-images")
+  .addEventListener("click", (event) => {
+    const clickedThumbnail = event.target.closest("#lightbox-thumbnail");
+
+    if (clickedThumbnail) {
+      const newSrc = clickedThumbnail.querySelector("img").dataset.link;
+
+      // Update the current slide index
+      curSlide = Array.from(lightBoxThumbnails).indexOf(clickedThumbnail);
+
+      // Update the current slide image source
+      slides[curSlide].querySelector("img").src = `${newSrc}.jpg`;
+
+      // Update the slide and thumbnails
+      updateSlideAndThumbnails();
+    }
+  });
 
 // ===================
 // Show cart on click
@@ -139,6 +123,32 @@ const toggleCartBoxVisibility = () => {
   }
 
   cartLogo.classList.toggle("has-submenu");
+
+  const subMenu = document.querySelector(".sub-menu");
+
+  subMenu.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+      cartLogo.classList.add("has-submenu");
+    }, 5000);
+  });
 };
 
-cartLogo.addEventListener("click", toggleCartBoxVisibility);
+function initApp() {
+  cartLogo.addEventListener("click", toggleCartBoxVisibility);
+
+  cartLogo.addEventListener("click", toggleCartBoxVisibility);
+
+  thumbnails.forEach((img) => {
+    img.addEventListener("click", updatelargeImage);
+  });
+  navToggle.addEventListener("click", toggleNav);
+  largeProductImage.addEventListener("click", () => {
+    lightboxContainer.classList.toggle("hide");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightboxContainer.classList.toggle("hide");
+  });
+}
+
+initApp();
