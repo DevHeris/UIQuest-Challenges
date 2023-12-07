@@ -1,7 +1,6 @@
 const lightBoxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
 const lightboxContainer = document.getElementById("lightbox-gallery-popup");
 const largeProductImage = document.getElementById("large-product-image");
-
 const primaryNav = document.querySelector(".primary-navigation");
 const quantityBtns = document.querySelectorAll(".quantity-btn");
 const navToggle = document.querySelector(".mobile-nav-toggle");
@@ -119,7 +118,7 @@ document
 // ===================
 // Show cart on click
 // ===================
-const toggleCartBoxVisibility = () => {
+const toggleCartBoxVisibility = (event) => {
   if (cartLogo.classList.contains("has-submenu")) {
     cartLogo.firstElementChild.setAttribute("aria-expanded", true);
   } else {
@@ -128,12 +127,25 @@ const toggleCartBoxVisibility = () => {
 
   cartLogo.classList.toggle("has-submenu");
 
+  if (!event.target.classList.contains("cart-icon")) {
+    if (event.target.alt === "delete from cart") {
+      const cartContentEl = document.querySelector(".change");
+      cartContentEl.classList.add("empty");
+      cartContentEl.classList.remove("cart-content");
+      cartContentEl.innerHTML = `<p>Your cart is empty.</p>`;
+
+      chosenQuantity = 0;
+      itemCountEl.textContent = chosenQuantity;
+      document.querySelector(".item-count").classList.remove("notEmpty");
+    }
+  }
+
   const subMenu = document.querySelector(".sub-menu");
 
   subMenu.addEventListener("mouseleave", () => {
     setTimeout(() => {
       cartLogo.classList.add("has-submenu");
-    }, 10000);
+    }, 5000);
   });
 };
 
