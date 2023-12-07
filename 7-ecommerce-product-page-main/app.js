@@ -1,3 +1,4 @@
+// Selecting elements from the DOM
 const lightBoxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
 const lightboxContainer = document.getElementById("lightbox-gallery-popup");
 const largeProductImage = document.getElementById("large-product-image");
@@ -14,9 +15,7 @@ const addBtn = document.getElementById("add-btn");
 const cartLogo = document.querySelector(".cart");
 const itemCountEl = document.querySelector(".item-count");
 
-// ===================================
-// Mobile Navigation toggle
-// ==================================
+// Function to toggle the visibility of the primary navigation on mobile
 const toggleNav = () => {
   const visibility = primaryNav.getAttribute("data-visible");
   if (visibility === "false") {
@@ -28,13 +27,12 @@ const toggleNav = () => {
   }
 };
 
-// ==================================
-// Lightbox Image slider
-// ==================================
+// Initializing variables for slide navigation
 let curSlide = 0;
 let maxSlide = slides.length - 1;
 const SLIDE_WIDTH_PERCENT = 150;
 
+// Setting initial positions for each slide
 slides.forEach((slide, indx) => {
   slide.style.transform = `translateX(${indx * SLIDE_WIDTH_PERCENT}%)`;
 });
@@ -57,6 +55,7 @@ const updateSlideAndThumbnails = () => {
   });
 };
 
+// Event listeners for next and previous slide buttons
 nextSlide.addEventListener("click", () => {
   if (curSlide === maxSlide) {
     curSlide = 0;
@@ -75,9 +74,7 @@ prevSlide.addEventListener("click", () => {
   updateSlideAndThumbnails();
 });
 
-// ========================================================================
-// Switch the large product image by clicking on the small thumbnail images
-// ========================================================================
+// Function to update the large product image based on the selected thumbnail
 const updatelargeImage = (event) => {
   const largeImg = document.querySelector(".large-product");
   const {
@@ -115,9 +112,7 @@ document
     }
   });
 
-// ===================
-// Show cart on click
-// ===================
+// Function to toggle the visibility of the cart box and update cart items
 const toggleCartBoxVisibility = (event) => {
   if (cartLogo.classList.contains("has-submenu")) {
     cartLogo.firstElementChild.setAttribute("aria-expanded", true);
@@ -127,6 +122,7 @@ const toggleCartBoxVisibility = (event) => {
 
   cartLogo.classList.toggle("has-submenu");
 
+  // Delete all cart items on delete icon click
   if (!event.target.classList.contains("cart-icon")) {
     if (event.target.alt === "delete from cart") {
       const cartContentEl = document.querySelector(".change");
@@ -142,6 +138,7 @@ const toggleCartBoxVisibility = (event) => {
 
   const subMenu = document.querySelector(".sub-menu");
 
+  // Set a timeout to add the "has-submenu" class after 5 seconds
   subMenu.addEventListener("mouseleave", () => {
     setTimeout(() => {
       cartLogo.classList.add("has-submenu");
@@ -149,15 +146,16 @@ const toggleCartBoxVisibility = (event) => {
   });
 };
 
+// Function to check if the viewport is in mobile mode
 function isMobile() {
   return window.matchMedia("(max-width: 43em)").matches;
 }
 
-// ======================================
-// The Cart
-// ======================================
+// Initializing quantity-related variables
 let quantity = 0;
 let chosenQuantity = 0;
+
+// Function to update the quantity based on button clicks
 const updateQuantity = (event) => {
   if (event.target.classList.contains("increase-icon")) {
     quantity++;
@@ -171,34 +169,29 @@ const updateQuantity = (event) => {
   chosenQuantity = quantity;
 };
 
+// Function to update the cart content and reset quantity-related variables
 const updateCart = () => {
   const cartContentEl = document.querySelector(".change");
   cartContentEl.innerHTML = `
-  <div class="shoe-img-container">
-                <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
-              </div>
-              <div>
-                <p class="shoe-name">Fall Limited Edition Sneakers</p>
-                <p class="total-price-container">
-                  $125.00 x <span class="chosen-quantity">3</span> <span class="total-price">$375.00</span>
-                </p>
-              </div>
-              <div class="delete-icon">
-                <img src="images/icon-delete.svg" alt="delete from cart">
-              </div>
-              <button type="submit" class="checkout-btn">Checkout</button>
+    <div class="shoe-img-container">
+      <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
+    </div>
+    <div>
+      <p class="shoe-name">Fall Limited Edition Sneakers</p>
+      <p class="total-price-container">
+        $125.00 x <span class="chosen-quantity">${chosenQuantity}</span> <span class="total-price">$${
+    chosenQuantity * 125
+  }.00</span>
+      </p>
+    </div>
+    <div class="delete-icon">
+      <img src="images/icon-delete.svg" alt="delete from cart">
+    </div>
+    <button type="submit" class="checkout-btn">Checkout</button>
   `;
 
   cartContentEl.classList.remove("empty");
   cartContentEl.classList.add("cart-content");
-
-  // Do not move these two variables from here
-  const chosenQuantityEl = document.querySelector(".chosen-quantity");
-  const totalPriceEl = document.querySelector(".total-price");
-
-  chosenQuantityEl.textContent = chosenQuantity;
-  const totalPice = chosenQuantity * 125;
-  totalPriceEl.innerHTML = `$${totalPice}.00`;
 
   quantityEl.textContent = 0;
   quantity = 0;
@@ -208,13 +201,16 @@ const updateCart = () => {
   document.querySelector(".item-count").classList.add("notEmpty");
 };
 
+// Function to initialize the application
 function initApp() {
+  // Check if the viewport is in mobile mode and show/hide the lightbox accordingly
   if (isMobile()) {
     lightboxContainer.classList.remove("hide");
   } else {
     lightboxContainer.classList.add("hide");
   }
 
+  // Event listeners for cart, thumbnails, navigation toggle, lightbox, and quantity buttons
   cartLogo.addEventListener("click", toggleCartBoxVisibility);
   thumbnails.forEach((img) => {
     img.addEventListener("click", updatelargeImage);
@@ -233,4 +229,5 @@ function initApp() {
   addBtn.addEventListener("click", updateCart);
 }
 
+// Initialize the application when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", initApp);
