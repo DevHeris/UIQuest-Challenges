@@ -378,7 +378,7 @@ ul {
 /* Lightbox styling */
 .lightbox-gallery-popup {
     position: absolute;
-    /* z-index: 2000; */
+    z-index: 2000;
     top: 0;
     left: 0;
     height: 100vh;
@@ -622,7 +622,8 @@ ul {
 
     .lightbox-gallery-popup {
         background-color: transparent;
-        top: 9.5%;
+        top: 9.3%;
+        /* z-index: 1; */
     }
 
     .lightbox-gallery-popup .thumbnail-images {
@@ -631,6 +632,10 @@ ul {
 
     .close-popup {
         display: none;
+    }
+
+    .image-slider {
+        background-color: transparent;
     }
 
     .popup {
@@ -642,6 +647,10 @@ ul {
     .image-slider img,
     .image-slider {
         border-radius: 0;
+    }
+
+    .image-slider {
+        height: 400px;
     }
 
     .slide {
