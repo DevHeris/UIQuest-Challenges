@@ -1,24 +1,26 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
 :root {
     /* Primary Colors */
     --orange: hsl(26, 100%, 55%);
     --pale-orange: hsl(25, 100%, 94%);
+    /*  */
 
-    /* //Neutral Colors */
+    /* Neutral Colors */
     --very-dark-blue: hsl(220, 13%, 13%);
     --dark-grayish-blue: hsl(219, 9%, 45%);
     --grayish-blue: hsl(220, 14%, 75%);
     --light-grayish-blue: hsl(223, 64%, 98%);
     --white: hsl(0, 0%, 100%);
+    /*  */
 
     /* black (with 75% opacity for lightbox background) */
     --black: hsl(0, 0%, 0%);
-
     --padding: 2.5rem;
 }
 
-/* Resetting default styles for all elements */
+/* Reset Styles */
 *,
 ::after,
 ::before {
@@ -28,6 +30,17 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Body styles */
 body {
     overflow: auto;
     position: relative;
@@ -35,6 +48,7 @@ body {
     scrollbar-width: thin;
 }
 
+/* Scrollbar styles */
 body::-webkit-scrollbar {
     width: 12px;
 }
@@ -48,17 +62,7 @@ body::-webkit-scrollbar-track {
     background-color: var(--very-dark-blue);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-ul {
-    list-style-type: none;
-}
-
-/* Helper class to visually hide elements but keep them accessible for screen readers */
+/* Accessibility */
 .sr-only {
     display: none;
 }
@@ -67,17 +71,19 @@ ul {
     display: none;
 }
 
+/* Logo styles */
 .logo {
     margin: 2rem;
     margin-left: 0;
 }
 
-/* Flex utility class for easy flex container styling */
+/* Flex container styles */
 .flex {
     display: flex;
     gap: var(--gap, clamp(1rem, 3vw, 2rem));
 }
 
+/* Header styles */
 .primary-header {
     --max-width: 1200px;
     align-items: center;
@@ -88,18 +94,21 @@ ul {
     margin-inline: auto;
 }
 
+/* Logo and navigation styles */
 .logo-and-nav {
     display: flex;
     align-items: center;
     gap: 2em;
 }
 
+/* Cart container styles  */
 .cart-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
+/* Profile picture styles */
 .profile-pic-container {
     max-width: 55%;
     padding-left: 2em;
@@ -111,11 +120,12 @@ ul {
     border: 3px solid var(--orange);
 }
 
+/* Mobile Navigation Toggle Styles */
 .mobile-nav-toggle {
     display: none;
 }
 
-/* Styles for the primary navigation list */
+/* Primary Navigation Styles */
 .primary-navigation {
     list-style: none;
     padding-inline-end: 1em;
@@ -152,6 +162,7 @@ ul {
     width: 100%;
 }
 
+/* Cart Icon Styles */
 .cart-icon {
     cursor: pointer;
     position: relative;
@@ -182,6 +193,7 @@ ul {
     background-color: transparent;
 }
 
+/* Empty Cart Styles */
 .empty {
     display: block;
     text-align: center;
@@ -192,6 +204,7 @@ ul {
     padding: 5em 0;
 }
 
+/* Submenu Styles */
 .has-submenu .sub-menu {
     display: none;
 }
@@ -215,6 +228,7 @@ ul {
     z-index: 3;
 }
 
+/* Delete Icon Styles */
 .delete-icon {
     cursor: pointer;
 }
@@ -239,6 +253,7 @@ ul {
     margin-bottom: .4em;
 }
 
+/* Total Price Styles */
 .total-price {
     font-weight: bold;
     color: var(--black);
@@ -248,6 +263,7 @@ ul {
     border-radius: .52em;
 }
 
+/* Checkout Button Styles */
 .checkout-btn {
     background-color: var(--orange);
     color: var(--white);
@@ -261,7 +277,7 @@ ul {
     transition: background-color .4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* Sneakers-main section styling */
+/* Sneakers Main Section Styles */
 .sneakers-main {
     --max-width: 1100px;
     width: min(var(--max-width), 100% - (var(--padding) * 2));
@@ -272,12 +288,13 @@ ul {
     gap: clamp(2.5em, 8vw, 7em);
 }
 
-/* Img gallery */
+/* Large Product Styles */
 .large-product {
     border-radius: 1em;
     cursor: pointer;
 }
 
+/* Thumbnail Images Styles */
 .thumbnail-images {
     display: flex;
     align-items: center;
@@ -298,6 +315,7 @@ ul {
     transition: transform .4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
+/* Active Thumbnail Styles */
 .active {
     border: 2px solid var(--orange);
 }
@@ -306,7 +324,7 @@ ul {
     opacity: 0.5;
 }
 
-/* Product info container */
+/* Product Info Container Styles */
 .product-info-container>h5 {
     color: var(--orange);
     text-transform: uppercase;
@@ -325,6 +343,7 @@ ul {
     margin-bottom: 1em
 }
 
+/* Price Info Container Styles */
 .price-info-container {
     padding: .5em 0;
 }
@@ -335,12 +354,14 @@ ul {
     gap: 1em;
 }
 
+/* Discounted Price Styles */
 .discounted-price {
     font-size: 1.5em;
     color: var(--very-dark-blue);
     font-weight: bold;
 }
 
+/* Discount Percentage Styles */
 .discount-percentage {
     background-color: var(--pale-orange);
     color: var(--orange);
@@ -349,6 +370,7 @@ ul {
     border-radius: .3em;
 }
 
+/* Original Price Styles */
 .original-price {
     display: block;
     color: var(--grayish-blue);
@@ -356,12 +378,14 @@ ul {
     font-size: .9em;
 }
 
+/* Quantity and Add to Cart Container Styles */
 .quantity-add-to-cart-container {
     display: flex;
     gap: 1em;
     align-items: center;
 }
 
+/* Quantity Container Styles */
 .quantity-container {
     border-radius: .8em;
     background-color: var(--light-grayish-blue);
@@ -372,6 +396,7 @@ ul {
     gap: 3em;
 }
 
+/* Add Button Styles */
 .add-btn {
     display: flex;
     align-items: center;
@@ -388,27 +413,31 @@ ul {
     transition: background-color .4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* Button Hover Styles */
 .add-btn:hover,
 .checkout-btn:hover {
     background-color: hsla(26, 100%, 55%, 0.548);
 }
 
+/* Add Button Span Styles */
 .add-btn span {
     font-size: 1.2em;
 }
 
+/* Decrease and Increase Button Styles */
 .decrease,
 .increase {
     cursor: pointer;
     transition: opacity .4s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
+/* Decrease and Increase Hover Styles */
 .decrease:hover,
 .increase:hover {
     opacity: .6;
 }
 
-/* Lightbox styling */
+/* Lightbox Styles */
 .lightbox-gallery-popup {
     position: absolute;
     z-index: 300;
@@ -420,69 +449,10 @@ ul {
     overflow-y: auto;
 }
 
+/* Lightbox Thumbnail Styles */
 .lightbox-gallery-popup .thumbnail-images {
     max-width: 85%;
     margin-top: 0;
-}
-
-.close-popup {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    cursor: pointer;
-}
-
-.svg-close {
-    transform: scale(1.4);
-    transition: fill 0.3s ease;
-}
-
-.svg-close:hover path {
-    fill: var(--orange);
-}
-
-.image-slider img {
-    border-radius: 1em;
-    margin: auto;
-    object-fit: cover;
-}
-
-.image-slider {
-    width: 100%;
-    max-width: 800px;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    border-radius: 1em;
-}
-
-.slide {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    position: absolute;
-    transition: all 0.5s;
-}
-
-.slide img {
-    border-radius: 1em;
-    margin: auto;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.control-btn {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer;
-    background-color: #fff;
 }
 
 .lightbox-gallery-popup .thumbnail-images li {
@@ -501,6 +471,88 @@ ul {
     width: 100%;
     opacity: .6;
     border-radius: .5em;
+}
+
+.lightbox-gallery-popup .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+}
+
+/* Popup Styles */
+.popup {
+    --max-width: 500px;
+    width: min(var(--max-width), 100% - (var(--padding) * 2));
+    margin: 5em 0 0 0;
+    margin-inline: auto;
+}
+
+/* Close Popup Styles */
+.close-popup {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* SVG Close Styles */
+.svg-close {
+    transform: scale(1.4);
+    transition: fill 0.3s ease;
+}
+
+/* SVG Close Hover Styles */
+.svg-close:hover path {
+    fill: var(--orange);
+}
+
+/* Image Slider Styles */
+.image-slider img {
+    border-radius: 1em;
+    margin: auto;
+    object-fit: cover;
+}
+
+/* Image Slider Container Styles */
+.image-slider {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    border-radius: 1em;
+}
+
+/* Slide Styles */
+.slide {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.slide img {
+    border-radius: 1em;
+    margin: auto;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Control Button Styles */
+.control-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;
 }
 
 .control-btn:active {
@@ -530,20 +582,6 @@ ul {
 .btn-prev:hover svg path,
 .btn-prev:hover svg path {
     stroke: var(--orange);
-}
-
-.popup {
-    --max-width: 500px;
-    width: min(var(--max-width), 100% - (var(--padding) * 2));
-    margin: 5em 0 0 0;
-    margin-inline: auto;
-}
-
-.lightbox-gallery-popup .content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    align-items: center;
 }
 
 /* Media queries for mobile view */
@@ -722,7 +760,7 @@ ul {
 
 }
 
-@media screen and (max-width:977px) {
+@media screen and (max-width:61.07em) {
     .quantity-add-to-cart-container {
         flex-direction: column;
         align-items: stretch;
@@ -734,7 +772,7 @@ ul {
     }
 }
 
-@media screen and (max-width:1400px) {
+@media screen and (max-width:87.5em) {
     .sub-menu {
         transform: translateX(-35%);
         top: 175%;
