@@ -124,8 +124,21 @@ const toggleCartBoxVisibility = (event) => {
 
   // Delete all cart items on delete icon click
   if (!event.target.classList.contains("cart-icon")) {
-    if (event.target.alt === "delete from cart") {
-      const cartContentEl = document.querySelector(".change");
+    const isDeleteBtn = event.target.alt === "delete from cart";
+    const isCheckoutBtn = event.target.classList.contains("checkout-btn");
+
+    const cartContentEl = document.querySelector(".change");
+    if (isDeleteBtn) {
+      if (confirm("This will delete all items in the cart.")) {
+        cartContentEl.classList.add("empty");
+        cartContentEl.classList.remove("cart-content");
+        cartContentEl.innerHTML = `<p>Your cart is empty.</p>`;
+
+        chosenQuantity = 0;
+        itemCountEl.textContent = chosenQuantity;
+        document.querySelector(".item-count").classList.remove("notEmpty");
+      }
+    } else if (isCheckoutBtn) {
       cartContentEl.classList.add("empty");
       cartContentEl.classList.remove("cart-content");
       cartContentEl.innerHTML = `<p>Your cart is empty.</p>`;
@@ -133,6 +146,8 @@ const toggleCartBoxVisibility = (event) => {
       chosenQuantity = 0;
       itemCountEl.textContent = chosenQuantity;
       document.querySelector(".item-count").classList.remove("notEmpty");
+      alert("Checkout Successful!");
+      2;
     }
   }
 
