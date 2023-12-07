@@ -186,34 +186,40 @@ const updateQuantity = (event) => {
 
 // Function to update the cart content and reset quantity-related variables
 const updateCart = () => {
-  const cartContentEl = document.querySelector(".change");
-  cartContentEl.innerHTML = `
-    <div class="shoe-img-container">
-      <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
-    </div>
-    <div>
-      <p class="shoe-name">Fall Limited Edition Sneakers</p>
-      <p class="total-price-container">
-        $125.00 x <span class="chosen-quantity">${chosenQuantity}</span> <span class="total-price">$${
-    chosenQuantity * 125
-  }.00</span>
-      </p>
-    </div>
-    <div class="delete-icon">
-      <img src="images/icon-delete.svg" alt="delete from cart">
-    </div>
-    <button type="submit" class="checkout-btn">Checkout</button>
-  `;
+  // Check if the chosen quantity is greater than 0
+  if (chosenQuantity > 0) {
+    const cartContentEl = document.querySelector(".change");
+    cartContentEl.innerHTML = `
+      <div class="shoe-img-container">
+        <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
+      </div>
+      <div>
+        <p class="shoe-name">Fall Limited Edition Sneakers</p>
+        <p class="total-price-container">
+          $125.00 x <span class="chosen-quantity">${chosenQuantity}</span> <span class="total-price">$${
+      chosenQuantity * 125
+    }.00</span>
+        </p>
+      </div>
+      <div class="delete-icon">
+        <img src="images/icon-delete.svg" alt="delete from cart">
+      </div>
+      <button type="submit" class="checkout-btn">Checkout</button>
+    `;
 
-  cartContentEl.classList.remove("empty");
-  cartContentEl.classList.add("cart-content");
+    cartContentEl.classList.remove("empty");
+    cartContentEl.classList.add("cart-content");
 
-  quantityEl.textContent = 0;
-  quantity = 0;
+    quantityEl.textContent = 0;
+    quantity = 0;
 
-  itemCountEl.textContent = chosenQuantity;
+    itemCountEl.textContent = chosenQuantity;
 
-  document.querySelector(".item-count").classList.add("notEmpty");
+    document.querySelector(".item-count").classList.add("notEmpty");
+  } else {
+    // Display a message to the user indicating that they need to choose a quantity
+    alert("Please choose a quantity before adding the item to the cart.");
+  }
 };
 
 // Function to initialize the application
