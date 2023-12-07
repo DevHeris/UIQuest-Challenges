@@ -1,14 +1,19 @@
 const lightBoxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
 const lightboxContainer = document.getElementById("lightbox-gallery-popup");
 const largeProductImage = document.getElementById("large-product-image");
+
 const primaryNav = document.querySelector(".primary-navigation");
+const quantityBtns = document.querySelectorAll(".quantity-btn");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const thumbnails = document.querySelectorAll(".thumbnail");
 const closeBtn = document.querySelector(".close-popup");
+const quantityEl = document.querySelector("#quantity");
 const nextSlide = document.querySelector(".btn-next");
 const prevSlide = document.querySelector(".btn-prev");
 const slides = document.querySelectorAll(".slide");
+const addBtn = document.getElementById("add-btn");
 const cartLogo = document.querySelector(".cart");
+const itemCountEl = document.querySelector(".item-count");
 
 // ===================================
 // Mobile Navigation toggle
@@ -128,13 +133,68 @@ const toggleCartBoxVisibility = () => {
   subMenu.addEventListener("mouseleave", () => {
     setTimeout(() => {
       cartLogo.classList.add("has-submenu");
-    }, 5000);
+    }, 10000);
   });
 };
 
 function isMobile() {
   return window.matchMedia("(max-width: 43em)").matches;
 }
+
+// ======================================
+// The Cart
+// ======================================
+let quantity = 0;
+let chosenQuantity = 0;
+const updateQuantity = (event) => {
+  if (event.target.classList.contains("increase-icon")) {
+    quantity++;
+    quantityEl.textContent = quantity;
+  } else if (event.target.classList.contains("decrease-icon")) {
+    if (quantity > 0) {
+      quantity--;
+    }
+    quantityEl.textContent = quantity;
+  }
+  chosenQuantity = quantity;
+};
+
+const updateCart = () => {
+  const cartContentEl = document.querySelector(".change");
+  cartContentEl.innerHTML = `
+  <div class="shoe-img-container">
+                <img src="images/image-product-1-thumbnail.jpg" alt="shoe in cart">
+              </div>
+              <div>
+                <p class="shoe-name">Fall Limited Edition Sneakers</p>
+                <p class="total-price-container">
+                  $125.00 x <span class="chosen-quantity">3</span> <span class="total-price">$375.00</span>
+                </p>
+              </div>
+              <div class="delete-icon">
+                <img src="images/icon-delete.svg" alt="delete from cart">
+              </div>
+              <button type="submit" class="checkout-btn">Checkout</button>
+  `;
+
+  cartContentEl.classList.remove("empty");
+  cartContentEl.classList.add("cart-content");
+
+  // Do not move these two variables from here
+  const chosenQuantityEl = document.querySelector(".chosen-quantity");
+  const totalPriceEl = document.querySelector(".total-price");
+
+  chosenQuantityEl.textContent = chosenQuantity;
+  const totalPice = chosenQuantity * 125;
+  totalPriceEl.innerHTML = `$${totalPice}.00`;
+
+  quantityEl.textContent = 0;
+  quantity = 0;
+
+  itemCountEl.textContent = chosenQuantity;
+
+  document.querySelector(".item-count").classList.add("notEmpty");
+};
 
 function initApp() {
   if (isMobile()) {
@@ -156,6 +216,9 @@ function initApp() {
   closeBtn.addEventListener("click", () => {
     lightboxContainer.classList.toggle("hide");
   });
+
+  quantityBtns.forEach((btn) => btn.addEventListener("click", updateQuantity));
+  addBtn.addEventListener("click", updateCart);
 }
 
-initApp();
+document.addEventListener("DOMContentLoaded", initApp);

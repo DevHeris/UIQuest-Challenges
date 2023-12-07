@@ -29,7 +29,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow: auto;
     position: relative;
 }
 
@@ -64,7 +64,7 @@ ul {
 }
 
 .primary-header {
-    --max-width: 1115px;
+    --max-width: 1200px;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid hsla(220, 14%, 75%, 0.245);
@@ -142,8 +142,7 @@ ul {
     position: relative;
 }
 
-.wrapper::after {
-    content: '3';
+.item-count {
     position: absolute;
     display: flex;
     align-items: center;
@@ -152,12 +151,29 @@ ul {
     font-weight: bold;
     top: 4%;
     left: 37%;
-    background-color: var(--orange);
     color: var(--white);
     padding: .3em .6em;
     border-radius: 50%;
-    height: 1.2em;
-    width: 1.1em;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.notEmpty {
+    background-color: var(--orange);
+}
+
+.isEmpty {
+    background-color: transparent;
+}
+
+.empty {
+    display: block;
+    text-align: center;
+}
+
+.empty p {
+    font-weight: bold;
+    padding: 5em 0;
 }
 
 .has-submenu .sub-menu {
@@ -230,7 +246,7 @@ ul {
 
 /* Sneakers-main section styling */
 .sneakers-main {
-    --max-width: 1000px;
+    --max-width: 1100px;
     width: min(var(--max-width), 100% - (var(--padding) * 2));
     margin: 5em 0;
     margin-inline: auto;
