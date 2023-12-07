@@ -1,13 +1,13 @@
-const largeProductImage = document.getElementById("large-product-image");
+const lightBoxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
 const lightboxContainer = document.getElementById("lightbox-gallery-popup");
-const closeBtn = document.querySelector(".close-popup");
+const largeProductImage = document.getElementById("large-product-image");
 const primaryNav = document.querySelector(".primary-navigation");
-const lightBoxThumbnails = document.querySelectorAll("#lightbox-thumbnail");
 const navToggle = document.querySelector(".mobile-nav-toggle");
-const slides = document.querySelectorAll(".slide");
-const prevSlide = document.querySelector(".btn-prev");
+const thumbnails = document.querySelectorAll(".thumbnail");
+const closeBtn = document.querySelector(".close-popup");
 const nextSlide = document.querySelector(".btn-next");
-const thumbnails = document.querySelectorAll("#thumbnail");
+const prevSlide = document.querySelector(".btn-prev");
+const slides = document.querySelectorAll(".slide");
 const cartLogo = document.querySelector(".cart");
 
 // ===================================
@@ -46,7 +46,6 @@ const updateSlideAndThumbnails = () => {
       if (thumbnail.classList.contains("active")) {
         thumbnail.classList.remove("active");
       }
-
       if (index === curSlide) {
         thumbnail.classList.add("active");
       }
@@ -96,7 +95,7 @@ const updatelargeImage = (event) => {
 document
   .querySelector(".thumbnail-images")
   .addEventListener("click", (event) => {
-    const clickedThumbnail = event.target.closest("#lightbox-thumbnail");
+    const clickedThumbnail = event.target.closest(".lightbox-thumbnail");
 
     if (clickedThumbnail) {
       const newSrc = clickedThumbnail.querySelector("img").dataset.link;
@@ -133,14 +132,22 @@ const toggleCartBoxVisibility = () => {
   });
 };
 
+function isMobile() {
+  return window.matchMedia("(max-width: 43em)").matches;
+}
+
 function initApp() {
-  cartLogo.addEventListener("click", toggleCartBoxVisibility);
+  if (isMobile()) {
+    lightboxContainer.classList.remove("hide");
+  } else {
+    lightboxContainer.classList.add("hide");
+  }
 
   cartLogo.addEventListener("click", toggleCartBoxVisibility);
-
   thumbnails.forEach((img) => {
     img.addEventListener("click", updatelargeImage);
   });
+
   navToggle.addEventListener("click", toggleNav);
   largeProductImage.addEventListener("click", () => {
     lightboxContainer.classList.toggle("hide");
