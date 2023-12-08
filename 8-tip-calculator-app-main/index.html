@@ -25,14 +25,15 @@
       <input type="text" id="billInput" class="bill-input">
 
       <label>Select Tip %</label>
-      <div class="tip-options-container">
-        <div class="tip-option">5%</div>
-        <div class="tip-option">10%</div>
-        <div class="tip-option">15%</div>
-        <div class="tip-option">25%</div>
-        <div class="tip-option">50%</div>
-        <div class="tip-option custom-option">Custom</div>
-      </div>
+      <ul class="tip-options-container">
+        <li class="tip-option">5%</li>
+        <li class="tip-option">10%</li>
+        <li class="tip-option">15%</li>
+        <li class="tip-option">25%</li>
+        <li class="tip-option">50%</li>
+        <!--  you can add an event listener to the tip options container to detect when the "Custom" option is clicked. When it's clicked, you can dynamically add an input field for the custom tip amount -->
+        <li class="tip-option custom-option" data-tip="custom">Custom</li>
+      </ul>
 
       <label for="numberOfPeopleInput">Number of People</label>
       <input type="text" id="numberOfPeopleInput" class="people-input">
@@ -48,9 +49,10 @@
         <label>Total / person</label>
         <div class="result-value total-amount-per-person"></div>
       </div>
+
+      <button class="reset-button">Reset</button>
     </div>
 
-    <button class="reset-button">Reset</button>
   </main>
 
 </body>
