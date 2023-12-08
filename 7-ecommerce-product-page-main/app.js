@@ -3,11 +3,12 @@ class MyApp {
     this.lightboxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
     this.lightboxContainer = document.getElementById("lightbox-gallery-popup");
     this.largeProductImage = document.getElementById("large-product-image");
+    this.lightboxThumbnailEl = document.querySelector(".thumbnail-images");
     this.primaryNav = document.querySelector(".primary-navigation");
     this.quantityBtns = document.querySelectorAll(".quantity-btn");
     this.navToggle = document.querySelector(".mobile-nav-toggle");
     this.thumbnails = document.querySelectorAll(".thumbnail");
-    this.lightboxThumbnailEl = document.querySelector(".thumbnail-images");
+    this.itemCountEl = document.querySelector(".item-count");
     this.closeBtn = document.querySelector(".close-popup");
     this.quantityEl = document.querySelector("#quantity");
     this.nextSlide = document.querySelector(".btn-next");
@@ -15,7 +16,6 @@ class MyApp {
     this.slides = document.querySelectorAll(".slide");
     this.addBtn = document.getElementById("add-btn");
     this.cartLogo = document.querySelector(".cart");
-    this.itemCountEl = document.querySelector(".item-count");
 
     this.quantity = 0;
     this.chosenQuantity = 0;

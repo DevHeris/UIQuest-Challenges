@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+
+  <title>Tip calculator app</title>
+
+</head>
+
+<body>
+  <header class="calculator-header">
+    <p>SPLI</p>
+    <p>TTER</p>
+  </header>
+
+  <main class="calculator-main">
+    <div class="left-side">
+      <label for="billInput">Bill</label>
+      <input type="text" id="billInput" class="bill-input">
+
+      <label>Select Tip %</label>
+      <div class="tip-options-container">
+        <div class="tip-option">5%</div>
+        <div class="tip-option">10%</div>
+        <div class="tip-option">15%</div>
+        <div class="tip-option">25%</div>
+        <div class="tip-option">50%</div>
+        <div class="tip-option custom-option">Custom</div>
+      </div>
+
+      <label for="numberOfPeopleInput">Number of People</label>
+      <input type="text" id="numberOfPeopleInput" class="people-input">
+    </div>
+
+    <div class="right-side">
+      <div class="result-section">
+        <label>Tip Amount / person</label>
+        <div class="result-value tip-amount-per-person"></div>
+      </div>
+
+      <div class="result-section">
+        <label>Total / person</label>
+        <div class="result-value total-amount-per-person"></div>
+      </div>
+    </div>
+
+    <button class="reset-button">Reset</button>
+  </main>
+
+</body>
+
+</html>
