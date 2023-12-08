@@ -661,6 +661,7 @@ body::-webkit-scrollbar-track {
 
     .large-product {
         border-radius: 0;
+        display: none;
     }
 
     .thumbnail-images {
@@ -748,10 +749,6 @@ body::-webkit-scrollbar-track {
     .item-count {
         left: 50%;
         top: 0%;
-    }
-
-    .large-product {
-        display: none;
     }
 
     .large-product-image {
