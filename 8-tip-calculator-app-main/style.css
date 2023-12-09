@@ -205,6 +205,11 @@ label[for="numberOfPeopleInput"] {
     border-radius: .4em;
     font-size: 1.2em;
     margin-top: .4em;
+    transition: background-color .4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reset-button:hover {
+    background-color: var(--strong-cyan);
 }
 
 @keyframes glow {
