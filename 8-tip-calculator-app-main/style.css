@@ -17,7 +17,7 @@
     --form-input-font-size: 24px;
 
 
-    --max-width: 800px;
+    --max-width: 1000px;
     --padding: 1em;
 }
 
@@ -42,9 +42,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--light-grayish-cyan);
-    /* gap: 2.5em; */
+    gap: 3em;
 }
 
 .calculator-header {
@@ -56,21 +56,186 @@ body {
 .calculator-main {
     display: flex;
     justify-content: space-between;
-
-    gap: 3em;
+    gap: 3.5em;
     background-color: var(--white);
     padding: 2em;
     border-radius: 1em;
     width: min(var(--max-width), calc(100% - var(--padding) * 0));
 }
 
+/* Left side styles */
 .left-side {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    color: var(--dark-grayish-cyan);
 }
 
+
+label[for="billInput"],
+label[for="numberOfPeopleInput"] {
+    font-size: 1.2em;
+}
+
+.custom-bill-input-wrapper,
+.custom-noOfPeople-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--very-light-grayish-cyan);
+    padding: .7em .5em;
+    border-radius: .3em;
+    margin: .4em 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation: glow 12s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+    animation-fill-mode: backwards;
+}
+
+.custom-bill-input-wrapper:hover,
+.custom-bill-input-wrapper:focus,
+.custom-noOfPeople-input-wrapper:hover,
+.custom-noOfPeople-input-wrapper:focus,
+.custom-option:hover,
+.custom-option:focus s {
+    border: 2px solid var(--strong-cyan);
+}
+
+.bill-amount,
+.noOfPeople-count {
+    color: var(--grayish-cyan);
+}
+
+.left-side>p {
+    margin: 1.5em 0 1em 0;
+    font-size: 1.2em;
+}
+
+.tip-options-container {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 2.5em;
+}
+
+.tip-option {
+    background: var(--very-dark-cyan);
+    color: var(--white);
+    border-radius: .3em;
+    width: 8.45em;
+    padding: .7em 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+.tip-option:not(.custom-option):hover {
+    background: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.custom-option {
+    border: 2px solid transparent;
+    animation: glow 12s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+    animation-fill-mode: backwards;
+}
+
+.selected,
+.reset-button {
+    background-color: hsl(172, 88%, 35%);
+    color: var(--very-dark-cyan);
+}
+
+.custom-option {
+    background-color: var(--very-light-grayish-cyan);
+    color: inherit;
+}
+
+/* Right side styles */
 .right-side {
     background-color: var(--very-dark-cyan);
     border-radius: 1em;
     padding: clamp(1.5em, 3vw, 2em) clamp(1em, 3vw, 1.5em);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7em 0;
+}
+
+.result span {
+    display: block;
+}
+
+.result span:first-child {
+    color: var(--white);
+    font-size: clamp(.9em, 3vw, 1.1em);
+}
+
+.result span:last-child {
+    color: var(--grayish-cyan);
+    font-size: clamp(.8em, 3vw, .9em);
+}
+
+.result-value {
+    color: var(--strong-cyan);
+    font-size: clamp(1.5em, 5vw, 3em);
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-button {
+    border: none;
+    padding: .4em 0;
+    width: 90%;
+    text-transform: uppercase;
+    border-radius: .4em;
+    font-size: 1.2em;
+    margin-top: .4em;
+}
+
+@keyframes glow {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--strong-cyan);
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+@media screen and (max-width:63.67em) {
+    .calculator-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-wrapper {
+        margin-top: 2em;
+    }
+
+    .left-side {
+        width: 100%;
+    }
+
+    .right-side {
+        width: 100%;
+    }
 }

@@ -15,42 +15,69 @@
 
 <body>
   <header class="calculator-header">
-    <p>SPLI</p>
-    <p>TTER</p>
+    <div class="logo-wrapper">
+      <img src="images/logo.svg" alt="Splitter logo">
+    </div>
   </header>
 
   <main class="calculator-main">
     <div class="left-side">
       <label for="billInput">Bill</label>
-      <input type="text" id="billInput" class="bill-input">
+      <!-- <input type="text" id="billInput" class="bill-input"> -->
+      <div class="custom-bill-input-wrapper">
+        <div class="img-wrapper">
+          <img src="images/icon-dollar.svg" alt="Dollar Sign">
+        </div>
+        <p class="bill-amount">0</p>
+      </div>
 
-      <label>Select Tip %</label>
+      <p>Select Tip %</p>
       <ul class="tip-options-container">
-        <li class="tip-option">5%</li>
-        <li class="tip-option">10%</li>
-        <li class="tip-option">15%</li>
-        <li class="tip-option">25%</li>
-        <li class="tip-option">50%</li>
+        <li class="tip-option"><span>5%</span></li>
+        <li class="tip-option selected"><span>10%</span></li>
+        <li class="tip-option"><span>15%</span></li>
+        <li class="tip-option"><span>25%</span></li>
+        <li class="tip-option"><span>50%</span></li>
         <!--  you can add an event listener to the tip options container to detect when the "Custom" option is clicked. When it's clicked, you can dynamically add an input field for the custom tip amount -->
         <li class="tip-option custom-option" data-tip="custom">Custom</li>
       </ul>
 
       <label for="numberOfPeopleInput">Number of People</label>
-      <input type="text" id="numberOfPeopleInput" class="people-input">
+      <!-- <input type="text" id="numberOfPeopleInput" class="people-input">-->
+      <div class="custom-noOfPeople-input-wrapper">
+        <div class="img-wrapper">
+          <img src="images/icon-person.svg" alt="Dollar Sign">
+        </div>
+        <p class="noOfPeople-count">0</p>
+      </div>
     </div>
 
     <div class="right-side">
-      <div class="result-section">
-        <label>Tip Amount / person</label>
-        <div class="result-value tip-amount-per-person"></div>
+      <div>
+        <div class=" tip-amount-result result">
+          <p>
+            <span>Tip Amount</span>
+            <span>/ person</span>
+          </p>
+          <div class="result-value tip-amount-per-person">
+            $0.00
+          </div>
+        </div>
+
+        <div class="total-result result">
+          <p>
+            <span>Total</span>
+            <span>/ person</span>
+          </p>
+          <div class="result-value total-amount-per-person">
+            $0.00
+          </div>
+        </div>
       </div>
 
-      <div class="result-section">
-        <label>Total / person</label>
-        <div class="result-value total-amount-per-person"></div>
+      <div class="btn-wrapper">
+        <button class="reset-button" type="reset">Reset</button>
       </div>
-
-      <button class="reset-button">Reset</button>
     </div>
 
   </main>
