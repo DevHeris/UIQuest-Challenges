@@ -4,43 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
-
-  <title>Interactive comments section</title>
+  <title>Interactive Comments Section</title>
 </head>
 
 <body>
-
-  <!-- Pull dynamic content from the data.json file -->
-
   <main class="comments-section">
-    <article class="comment-container" id="1">
+    <!-- Comment 1 -->
+    <div class="comment-container" id="1">
       <div class="comment-vote">
         <div class="upvote-wrapper">
           <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
         </div>
-        <div class="vote-stats">12</div>
+        <div class="score">12</div>
         <div class="downvote-wrapper">
           <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
         </div>
       </div>
 
       <div class="comment-body">
-        <div class="coment-header">
+        <div class="comment-header">
           <div class="comment-user-info">
             <div class="profile-picture">
               <img src="images/avatars/image-amyrobson.png" alt="amyrobson profile picture" title="amyrobson">
             </div>
             <div class="user-details">
               <p class="user-name"><strong>amyrobson</strong></p>
-              <p class="comment-date">1 month ago</p>
+              <p class="date-created">1 month ago</p>
             </div>
           </div>
 
-          <div class="reply-section">
+          <div class="reply-option">
             <span>
               <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
             </span>
@@ -53,32 +49,43 @@
           the design and the responsiveness at various breakpoints works really well.
         </p>
       </div>
-    </article>
+    </div>
 
-    <article class="comment-container" id="2">
+    <!-- Active Reply for Comment 1 -->
+    <div class="active-reply" data-reply="1">
+      <div class="profile-picture">
+        <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
+      </div>
+
+      <input type="text">
+      <button type="submit" class="reply-btn btn">Reply</button>
+    </div>
+
+    <!-- Comment 2 -->
+    <div class="comment-container" id="2">
       <div class="comment-vote">
         <div class="upvote-wrapper">
           <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
         </div>
-        <div class="vote-stats">5</div>
+        <div class="score">5</div>
         <div class="downvote-wrapper">
           <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
         </div>
       </div>
 
       <div class="comment-body">
-        <div class="coment-header">
+        <div class="comment-header">
           <div class="comment-user-info">
             <div class="profile-picture">
               <img src="images/avatars/image-maxblagun.png" alt="maxblagun profile picture" title="maxblagun">
             </div>
             <div class="user-details">
               <p class="user-name"><strong>maxblagun</strong></p>
-              <p class="comment-date">2 weeks ago</p>
+              <p class="date-created">2 weeks ago</p>
             </div>
           </div>
 
-          <div class="reply-section">
+          <div class="reply-option">
             <span>
               <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
             </span>
@@ -91,10 +98,113 @@
           into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!
         </p>
       </div>
-    </article>
+    </div>
+
+    <!-- Reply Section -->
+    <div class="reply-section">
+      <!-- Reply Container -->
+      <div class="reply-container">
+        <div class="reply-vote">
+          <div class="upvote-wrapper">
+            <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
+          </div>
+          <div class="reply-stats">5</div>
+          <div class="downvote-wrapper">
+            <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
+          </div>
+        </div>
+
+        <div class="reply-body">
+          <div class="reply-header">
+            <div class="reply-user-info">
+              <div class="profile-picture">
+                <img src="images/avatars/image-ramsesmiron.png" alt="ramsesmiron profile picture" title="ramsesmiron">
+              </div>
+              <div class="user-details">
+                <p class="user-name"><strong>ramsesmiron</strong></p>
+                <p class="date-created">1 weeks ago</p>
+              </div>
+            </div>
+
+            <div class="reply-option">
+              <span>
+                <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
+              </span>
+              <span>Reply</span>
+            </div>
+          </div>
+
+          <p class="reply-text">
+            If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering
+            React. It's very tempting to jump ahead but lay a solid foundation first.
+          </p>
+        </div>
+      </div>
+
+      <!-- Active Reply for Comment 2 -->
+      <div class="active-reply" data-reply="2">
+        <div class="profile-picture">
+          <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
+        </div>
+
+        <input type="text">
+        <button type="submit" class="submit-btn btn">REPLY</button>
+      </div>
+
+      <!-- Uploaded Reply Being Edited -->
+      <div class="uploaded-reply currently-being-edited">
+        <div class="reply-vote">
+          <div class="upvote-wrapper">
+            <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
+          </div>
+          <div class="reply-stats">5</div>
+          <div class="downvote-wrapper">
+            <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
+          </div>
+        </div>
+
+        <div class="comment-header">
+          <div class="profile-picture">
+            <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
+          </div>
+
+          <p>you</p>
+          <p class="date-created">2 days ago</p>
+          <div class="modify-options-container">
+            <div class="delete-container">
+              <span>
+                <img src="images/icon-delete.svg" alt="delete icon" title="Delete">
+              </span>
+              <span>Delete</span>
+            </div>
+            <div class="edit-container">
+              <span>
+                <img src="images/icon-edit.svg" alt="edit icon" title="Edit">
+              </span>
+              <span>Edit</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="text">
+        </div>
+        <button class="update-btn btn">UPDATE</button>
+      </div>
+    </div>
+
+    <!-- New Comment Section -->
+    <div class="new-comment-section">
+      <div class="profile-picture">
+        <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
+      </div>
+
+      <div class="input-container">
+        <input type="text" class="new-input" placeholder="Add a comment...">
+      </div>
+
+      <button type="submit" class="submit-btn btn">SEND</button>
+    </div>
   </main>
-
-
 </body>
 
 </html>
