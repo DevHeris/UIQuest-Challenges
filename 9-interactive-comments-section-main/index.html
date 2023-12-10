@@ -110,7 +110,7 @@
           </div>
         </div>
 
-        <p class="gry-blue">
+        <p class="gry-blue comment-text">
           Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive
           into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!
         </p>
@@ -118,14 +118,14 @@
     </div>
 
     <!-- Reply Section -->
-    <div class=" reply-section">
+    <div class="reply-section">
       <!-- Reply Container -->
-      <div class="reply-container white-bg" data-reply-id="1">
+      <div class="reply-container flex white-bg" data-reply-id="1">
         <div class="reply-vote flex">
           <div class="upvote-wrapper cursor-pointer">
             <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
           </div>
-          <div class="reply-stats mod-blue-clr fw-bold">4</div>
+          <div class="score mod-blue-clr fw-bold">4</div>
           <div class="downvote-wrapper cursor-pointer">
             <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
           </div>
@@ -133,14 +133,16 @@
 
         <div class="reply-body flex">
           <div class="reply-header flex">
-            <div class="reply-user-info">
+            <div class="reply-user-info flex">
               <div class="profile-picture">
                 <img src="images/avatars/image-ramsesmiron.png" alt="ramsesmiron profile picture" title="ramsesmiron">
               </div>
               <div class="user-details">
-                <p class="user-name"><strong class="drk-blue">ramsesmiron</strong></p>
-                <p class="date-created gry-blue">1 week ago</p>
+                <p class="user-name">
+                  <strong class="drk-blue">ramsesmiron</strong>
+                </p>
               </div>
+              <p class="date-created gry-blue">1 week ago</p>
             </div>
 
             <div class="reply-option flex">
@@ -159,68 +161,70 @@
       </div>
 
       <!-- Active Reply for Comment 2 -->
-      <div class="active-reply white-bg" data-reply="2">
+      <div class="active-reply flex white-bg" data-reply="2">
         <div class="profile-picture">
           <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
         </div>
 
-        <input type="text">
+        <textarea class="reply-input" placeholder="Type your reply..."></textarea>
         <button type="submit" class="submit-btn white-clr btn">REPLY</button>
       </div>
 
       <!-- Uploaded Reply Being Edited -->
-      <div class="uploaded-reply currently-being-edited white-bg" data-reply-id="2">
+      <div class="uploaded-reply currently-being-edited flex white-bg" data-reply-id="2">
         <div class="reply-vote flex">
           <div class="upvote-wrapper cursor-pointer">
             <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
           </div>
-          <div class="reply-stats mod-blue-clr fw-bold">2</div>
+          <div class="score mod-blue-clr fw-bold">2</div>
           <div class="downvote-wrapper cursor-pointer">
             <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
           </div>
         </div>
 
-        <div class="comment-header flex">
-          <div class="profile-picture">
-            <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
-          </div>
+        <div class="comment-body flex">
+          <div class="comment-header flex">
+            <div class="flex">
+              <div class="profile-picture">
+                <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
+              </div>
 
-          <p>you</p>
-          <p class="date-created gry-blue">2 days ago</p>
-          <div class="modify-options-container">
-            <div class="delete-container">
-              <span class="cursor-pointer">
-                <img src="images/icon-delete.svg" alt="delete icon" title="Delete">
-              </span>
-              <span class="cursor-pointer">Delete</span>
+              <p class="blue-bg white-clr fw-bold you">you</p>
+              <p class="date-created gry-blue">2 days ago</p>
             </div>
-            <div class="edit-container">
-              <span class="cursor-pointer">
-                <img src="images/icon-edit.svg" alt="edit icon" title="Edit">
-              </span>
-              <span class="cursor-pointer">Edit</span>
+            <div class="modify-options-container flex">
+              <div class="delete-container flex">
+                <span class="cursor-pointer">
+                  <img src="images/icon-delete.svg" alt="delete icon" title="Delete">
+                </span>
+                <span class="cursor-pointer fw-bold red-clr">Delete</span>
+              </div>
+              <div class="edit-container flex">
+                <span class="cursor-pointer">
+                  <img src="images/icon-edit.svg" alt="edit icon" title="Edit">
+                </span>
+                <span class="cursor-pointer mod-blue-clr fw-bold">Edit</span>
+              </div>
             </div>
           </div>
+          <textarea class="reply-input" placeholder="Type your reply..."></textarea>
+          <div>
+            <button class="update-btn white-clr btn">UPDATE</button>
+          </div>
         </div>
-        <div class="input-container">
-          <input type="text" class="update-input">
-        </div>
-        <button class="update-btn white-clr btn">UPDATE</button>
       </div>
     </div>
   </main>
 
   <!-- New Comment Section -->
-  <footer class="new-comment-section white-bg container" data-new-comment>
+  <footer class="new-comment-section white-bg container flex" data-new-comment>
     <div class="profile-picture">
       <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
     </div>
 
-    <div class="input-container">
-      <input type="text" class="new-input" placeholder="Add a comment...">
-    </div>
+    <textarea class="reply-input" placeholder="Type your reply..."></textarea>
 
-    <button type="submit" class="submit-btn btn">SEND</button>
+    <button type="submit" class="submit-btn btn white-clr">SEND</button>
   </footer>
 </body>
 
