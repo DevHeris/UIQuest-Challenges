@@ -11,9 +11,21 @@
 </head>
 
 <body>
-  <main class="comments-section">
+  <div class="modal-wrapper">
+    <section class="modal-content white-bg">
+      <h4 class="drk-blue">Delete Comment</h4>
+      <p class="gry-blue">Are you sure you want to delete this comment? This will remove the comment and can't be
+        undone.</p>
+      <div class="btn-wrapper flex">
+        <button type="submit" class="cancel white-clr fw-bold">NO, CANCEL</button>
+        <button type="submit" class="delete white-clr fw-bold">YES, DELETE</button>
+      </div>
+    </section>
+  </div>
+
+  <main class=" comments-section">
     <!-- Comment 1 -->
-    <div class="comment-container" id="1" data-comment-id="1">
+    <div class="comment-container white-bg" id="1" data-comment-id="1">
       <div class="comment-vote">
         <div class="upvote-wrapper">
           <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
@@ -45,14 +57,15 @@
         </div>
 
         <p class="comment-text">
-          Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed
+          Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've
+          nailed
           the design and the responsiveness at various breakpoints works really well.
         </p>
       </div>
     </div>
 
     <!-- Active Reply for Comment 1 -->
-    <div class="active-reply" data-reply="1">
+    <div class="active-reply white-bg" data-reply="1">
       <div class="profile-picture">
         <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
       </div>
@@ -62,7 +75,7 @@
     </div>
 
     <!-- Comment 2 -->
-    <div class="comment-container" id="2" data-comment-id="2">
+    <div class="comment-container white-bg" id="2" data-comment-id="2">
       <div class="comment-vote">
         <div class="upvote-wrapper">
           <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
@@ -103,12 +116,12 @@
     <!-- Reply Section -->
     <div class="reply-section">
       <!-- Reply Container -->
-      <div class="reply-container" data-reply-id="1">
+      <div class="reply-container white-bg" data-reply-id="1">
         <div class="reply-vote">
           <div class="upvote-wrapper">
             <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
           </div>
-          <div class="reply-stats">5</div>
+          <div class="reply-stats">4</div>
           <div class="downvote-wrapper">
             <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
           </div>
@@ -142,7 +155,7 @@
       </div>
 
       <!-- Active Reply for Comment 2 -->
-      <div class="active-reply" data-reply="2">
+      <div class="active-reply white-bg" data-reply="2">
         <div class="profile-picture">
           <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
         </div>
@@ -152,12 +165,12 @@
       </div>
 
       <!-- Uploaded Reply Being Edited -->
-      <div class="uploaded-reply currently-being-edited" data-reply-id="2">
+      <div class="uploaded-reply currently-being-edited white-bg" data-reply-id="2">
         <div class="reply-vote">
           <div class="upvote-wrapper">
             <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
           </div>
-          <div class="reply-stats">5</div>
+          <div class="reply-stats">2</div>
           <div class="downvote-wrapper">
             <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
           </div>
@@ -191,20 +204,20 @@
         <button class="update-btn btn">UPDATE</button>
       </div>
     </div>
-
-    <!-- New Comment Section -->
-    <div class="new-comment-section" data-new-comment>
-      <div class="profile-picture">
-        <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
-      </div>
-
-      <div class="input-container">
-        <input type="text" class="new-input" placeholder="Add a comment...">
-      </div>
-
-      <button type="submit" class="submit-btn btn">SEND</button>
-    </div>
   </main>
+
+  <!-- New Comment Section -->
+  <footer class="new-comment-section white-bg" data-new-comment>
+    <div class="profile-picture">
+      <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
+    </div>
+
+    <div class="input-container">
+      <input type="text" class="new-input" placeholder="Add a comment...">
+    </div>
+
+    <button type="submit" class="submit-btn btn">SEND</button>
+  </footer>
 </body>
 
 </html>
