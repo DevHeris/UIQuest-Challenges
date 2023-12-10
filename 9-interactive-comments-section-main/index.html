@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+
+  <title>Interactive comments section</title>
+</head>
+
+<body>
+
+  <!-- Pull dynamic content from the data.json file -->
+
+  <main class="comments-section">
+    <article class="comment-container" id="1">
+      <div class="comment-vote">
+        <div class="upvote-wrapper">
+          <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
+        </div>
+        <div class="vote-stats">12</div>
+        <div class="downvote-wrapper">
+          <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
+        </div>
+      </div>
+
+      <div class="comment-body">
+        <div class="coment-header">
+          <div class="comment-user-info">
+            <div class="profile-picture">
+              <img src="images/avatars/image-amyrobson.png" alt="amyrobson profile picture" title="amyrobson">
+            </div>
+            <div class="user-details">
+              <p class="user-name"><strong>amyrobson</strong></p>
+              <p class="comment-date">1 month ago</p>
+            </div>
+          </div>
+
+          <div class="reply-section">
+            <span>
+              <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
+            </span>
+            <span>Reply</span>
+          </div>
+        </div>
+
+        <p class="comment-text">
+          Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed
+          the design and the responsiveness at various breakpoints works really well.
+        </p>
+      </div>
+    </article>
+
+    <article class="comment-container" id="2">
+      <div class="comment-vote">
+        <div class="upvote-wrapper">
+          <img src="images/icon-plus.svg" alt="Upvote Icon" title="Upvote Icon">
+        </div>
+        <div class="vote-stats">5</div>
+        <div class="downvote-wrapper">
+          <img src="images/icon-minus.svg" alt="Downvote Icon" title="Downvote Icon">
+        </div>
+      </div>
+
+      <div class="comment-body">
+        <div class="coment-header">
+          <div class="comment-user-info">
+            <div class="profile-picture">
+              <img src="images/avatars/image-maxblagun.png" alt="maxblagun profile picture" title="maxblagun">
+            </div>
+            <div class="user-details">
+              <p class="user-name"><strong>maxblagun</strong></p>
+              <p class="comment-date">2 weeks ago</p>
+            </div>
+          </div>
+
+          <div class="reply-section">
+            <span>
+              <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
+            </span>
+            <span>Reply</span>
+          </div>
+        </div>
+
+        <p class="comment-text">
+          Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive
+          into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!
+        </p>
+      </div>
+    </article>
+  </main>
+
+
+</body>
+
+</html>
