@@ -96,7 +96,7 @@ body {
 }
 
 .modal-content {
-    --max-width: 350px;
+    --max-width: 355px;
     position: absolute;
     padding: var(--padding);
     left: 50%;
@@ -160,13 +160,20 @@ body {
     font-size: 1.05em;
     cursor: pointer;
     transition: background-color .5s linear;
-    max-width: 7em;
+    padding: 1em 1.1em;
 }
 
 .btn:hover {
     background-color: hsla(238, 40%, 52%, 0.767);
 }
 
+.update-btn-wrapper {
+    justify-content: flex-end;
+}
+
+/* .update-btn {
+    padding: 1em 1.1em;
+} */
 
 /*  */
 .hide {
@@ -194,7 +201,7 @@ body {
 .comment-vote,
 .reply-vote {
     background-color: var(--light-gray);
-    width: 4.5em;
+    width: 6em;
     border-radius: .5em;
     padding: .4em;
     flex-direction: column;
@@ -235,6 +242,8 @@ body {
     margin-bottom: 1em;
     border-radius: .5em;
     justify-content: space-between;
+    gap: 0em;
+    /* transition: all .5s linear; */
 }
 
 .reply-input,
@@ -290,15 +299,47 @@ body {
     justify-content: flex-end;
 }
 
-.uploaded-reply .update-btn {
-    padding: 1em 1.6em;
-}
-
 .uploaded-reply .reply-vote {
-    max-width: 38.17px;
+    max-width: 48.6px;
 }
 
 .new-comment-section {
     padding: var(--padding);
     border-radius: .5em;
+    margin-bottom: 3em;
+}
+
+.active-reply .btn,
+.new-comment-section .btn {
+    padding: 1em 1.9em;
+}
+
+@media screen and (max-width:34.07em) {
+    /* .active-reply,
+    .new-comment-section {
+        display: grid;
+        grid-template-columns: .1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid: 2em;
+    }
+
+    .active-reply .profile-picture,
+    .new-comment-section .profile-picture {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .active-reply .reply-input,
+    .new-comment-section .reply-input {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 100%;
+    }
+
+    .active-reply .btn,
+    .new-comment-section .btn {
+        grid-column: 3/4;
+        grid-row: 2/3;
+        padding: .1em 2em;
+    } */
 }

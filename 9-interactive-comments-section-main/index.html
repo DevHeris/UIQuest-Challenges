@@ -51,10 +51,10 @@
           </div>
 
           <div class="reply-option flex">
-            <span class="cursor-pointer">
+            <span class="cursor-pointer reply">
               <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
             </span>
-            <span class="mod-blue-clr cursor-pointer fw-bold">Reply</span>
+            <span class="mod-blue-clr cursor-pointer reply fw-bold">Reply</span>
           </div>
         </div>
 
@@ -67,13 +67,15 @@
     </div>
 
     <!-- Active Reply for Comment 1 -->
-    <div class="active-reply flex white-bg" data-reply="1">
+    <div class="active-reply flex white-bg hide" data-reply="1">
       <div class="profile-picture">
         <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
       </div>
 
       <textarea class="reply-input" placeholder="Type your reply..."></textarea>
-      <button type="submit" class="reply-btn white-clr btn">Reply</button>
+      <div>
+        <button type="submit" class="reply-btn white-clr btn">Reply</button>
+      </div>
     </div>
 
     <!-- Comment 2 -->
@@ -103,10 +105,10 @@
           </div>
 
           <div class="reply-option flex">
-            <span class="cursor-pointer">
+            <span class="cursor-pointer reply">
               <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
             </span>
-            <span class="mod-blue-clr cursor-pointer fw-bold">Reply</span>
+            <span class="mod-blue-clr reply cursor-pointer fw-bold">Reply</span>
           </div>
         </div>
 
@@ -146,14 +148,15 @@
             </div>
 
             <div class="reply-option flex">
-              <span class="cursor-pointer">
+              <span class="cursor-pointer reply">
                 <img src="images/icon-reply.svg" alt="reply-icon" title="reply">
               </span>
-              <span class="mod-blue-clr cursor-pointer fw-bold">Reply</span>
+              <span class="mod-blue-clr reply cursor-pointer fw-bold">Reply</span>
             </div>
           </div>
 
           <p class="reply-text gry-blue">
+            <span class="mod-blue-clr fw-bold">@maxblagun</span>
             If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering
             React. It's very tempting to jump ahead but lay a solid foundation first.
           </p>
@@ -161,13 +164,15 @@
       </div>
 
       <!-- Active Reply for Comment 2 -->
-      <div class="active-reply flex white-bg" data-reply="2">
+      <div class="active-reply flex white-bg hide" data-reply="2">
         <div class="profile-picture">
           <img src="images/avatars/image-juliusomo.png" alt="juliusomo profile picture" title="juliusomo">
         </div>
 
         <textarea class="reply-input" placeholder="Type your reply..."></textarea>
-        <button type="submit" class="submit-btn white-clr btn">REPLY</button>
+        <div>
+          <button type="submit" class="submit-btn white-clr btn">REPLY</button>
+        </div>
       </div>
 
       <!-- Uploaded Reply Being Edited -->
@@ -207,8 +212,15 @@
               </div>
             </div>
           </div>
-          <textarea class="reply-input" placeholder="Type your reply..."></textarea>
-          <div>
+
+          <p class="reply-text gry-blue">
+            <span class="mod-blue-clr fw-bold">@ramsesmiron</span>
+            If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering
+            React. It's very tempting to jump ahead but lay a solid foundation first.
+          </p>
+
+          <!-- <textarea class="reply-input" placeholder="Type your reply..."></textarea> -->
+          <div class="update-btn-wrapper flex">
             <button class="update-btn white-clr btn">UPDATE</button>
           </div>
         </div>
@@ -223,8 +235,9 @@
     </div>
 
     <textarea class="reply-input" placeholder="Type your reply..."></textarea>
-
-    <button type="submit" class="submit-btn btn white-clr">SEND</button>
+    <div>
+      <button type="submit" class="submit-btn btn white-clr">SEND</button>
+    </div>
   </footer>
 </body>
 
