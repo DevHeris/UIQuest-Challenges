@@ -24,6 +24,161 @@
 
 img {
     height: auto;
-    max-width: 100%;
+    width: 100%;
     display: block;
 }
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    gap: 1em;
+}
+
+.sr-only {
+    display: none;
+}
+
+.blck-clr {
+    color: var(--black);
+}
+
+.drk-clr {
+    color: var(--dark-gray);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.fw-medium {
+    font-weight: var(--fw-medium);
+}
+
+.fw-normal {
+    font-weight: var(--fw-normal);
+}
+
+.grid-wrapper {
+    grid-auto-rows: 2fr auto;
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(1em, 3vw, 3.7em);
+    padding: 4em clamp(1.3em, 3vw, 3.5em);
+    padding-right: 0;
+}
+
+.hero-image-and-navigation {
+    background-image: url(images/desktop-image-hero-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: var(--fw-medium);
+    margin-inline-end: clamp(.5em, 4vw, 1.9em);
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation {
+    list-style-type: none;
+    gap: 0;
+    /* padding-inline-end: 1rem; */
+}
+
+.main-section {
+    grid-template-columns: 3fr 2.2fr;
+}
+
+.overview-article {
+    padding: clamp(1em, 8vw, 10em) clamp(.5em, 8vw, 6em);
+    position: relative;
+}
+
+.overview-heading {
+    font-size: clamp(1em, 3vw, 3.9em);
+    line-height: 0.9;
+}
+
+.overview-paragraph {
+    margin: 1.5em 0;
+}
+
+.cta {
+    align-items: center;
+    text-transform: uppercase;
+    gap: 1em;
+    letter-spacing: 8px;
+    cursor: pointer;
+}
+
+.slide-controls {
+    gap: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.prev-slide,
+.next-slide {
+    background-color: var(--black);
+    padding: 1.5em 2em;
+    cursor: pointer;
+    transition: background-color .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.prev-slide:hover,
+.next-slide:hover {
+    background-color: var(--very-dark-gray);
+}
+
+.secondary-section {
+    grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.furniture-description-section {
+    flex-direction: column;
+    padding: clamp(1em, 3vw, 4.4em) clamp(.5em, 3vw, 3.5em);
+}
+
+.furniture-description-section>h4 {
+    text-transform: uppercase;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+    font-size: clamp(1em, 3vw, 1.2em);
+}
+
+.overview-paragraph,
+.description {
+    font-size: 1.1em;
+}
+
+.secondary-section img {
+    height: 100%;
+}
+
+
+/* @media screen and (max-width:35em) {
+    .primary-navigation {
+        --gap: 1.5em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 0;
+
+
+    }
+} */
