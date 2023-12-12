@@ -1,3 +1,4 @@
+let current = 0;
 const nextBtn = document.querySelector(".next-slide");
 const prevBtn = document.querySelector(".prev-slide");
 
@@ -22,11 +23,15 @@ const overviewParagraphs = [
   `Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.`,
 ];
 
-let current = 0;
 const showNextSlide = () => {
   if (current >= 3) current = 0;
   current++;
-  slideImageContainer.style.backgroundImage = `url(images/desktop-image-hero-${current}.jpg)`;
+
+  if (isMobile) {
+    slideImageContainer.style.backgroundImage = `url(images/mobile-image-hero-${current}.jpg)`;
+  } else {
+    slideImageContainer.style.backgroundImage = `url(images/desktop-image-hero-${current}.jpg)`;
+  }
 
   overviewHeadingEl.innerText = overviewHeadings[current - 1];
   overviewParagraphEl.innerText = overviewParagraphs[current - 1];
@@ -36,9 +41,37 @@ const showPrevSlide = () => {
   if (current <= 1) current = 4;
 
   current--;
-  slideImageContainer.style.backgroundImage = `url(images/desktop-image-hero-${current}.jpg)`;
+
+  if (isMobile) {
+    slideImageContainer.style.backgroundImage = `url(images/mobile-image-hero-${current}.jpg)`;
+  } else {
+    slideImageContainer.style.backgroundImage = `url(images/desktop-image-hero-${current}.jpg)`;
+  }
+
+  overviewHeadingEl.innerText = overviewHeadings[current - 1];
+  overviewParagraphEl.innerText = overviewParagraphs[current - 1];
 };
 
-setInterval(showNextSlide, 6000);
-nextBtn.addEventListener("click", showNextSlide);
-prevBtn.addEventListener("click", showPrevSlide);
+let isMobile = window.matchMedia("(max-width: 43em)").matches;
+
+function initApp() {
+  setInterval(showNextSlide, 6000);
+
+  nextBtn.addEventListener("click", showNextSlide);
+  prevBtn.addEventListener("click", showPrevSlide);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") showNextSlide();
+    if (event.key === "ArrowLeft") showPrevSlide();
+  });
+
+  if (isMobile) {
+    document.querySelector(".mobile-control").classList.remove("hide");
+    document.querySelector(".desktop-control").classList.add("hide");
+  } else {
+    document.querySelector(".mobile-control").classList.add("hide");
+    document.querySelector(".desktop-control").classList.remove("hide");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initApp);
