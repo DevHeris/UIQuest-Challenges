@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
 
+/* CSS Variables */
 :root {
     /* Colors */
     --dark-gray: hsl(0, 0%, 63%);
@@ -13,6 +14,7 @@
     --fw-bold: 700;
 }
 
+/* Basic Reset */
 *,
 ::after,
 ::before {
@@ -28,6 +30,7 @@ img {
     display: block;
 }
 
+/* Utility Classes */
 .grid {
     display: grid;
 }
@@ -78,6 +81,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .primary-navigation a {
@@ -87,6 +91,27 @@ img {
     margin-inline-end: clamp(.5em, 4vw, 1.9em);
     text-transform: lowercase;
     cursor: pointer;
+    font-size: 1.1em;
+}
+
+.primary-navigation li {
+    position: relative;
+}
+
+.primary-navigation li a::after {
+    content: '';
+    display: block;
+    height: 2.5px;
+    width: 0;
+    background-color: white;
+    position: absolute;
+    bottom: -7px;
+    left: 10%;
+    transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.primary-navigation li:hover a::after {
+    width: 30%;
 }
 
 .mobile-nav-toggle {
@@ -103,9 +128,9 @@ img {
     grid-template-columns: 3fr 2.2fr;
 }
 
-.overview-article {
-    padding: clamp(1em, 8vw, 10em) clamp(.5em, 8vw, 6em);
-    position: relative;
+.overview-article>.content {
+    padding: clamp(1em, 8vw, 8em) clamp(.5em, 8vw, 5em);
+    padding-bottom: clamp(1em, 3vw, 5em);
 }
 
 .overview-heading {
@@ -123,13 +148,15 @@ img {
     gap: 1em;
     letter-spacing: 8px;
     cursor: pointer;
+    transition: color .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.cta:hover {
+    color: var(--dark-gray);
 }
 
 .slide-controls {
     gap: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .prev-slide,
