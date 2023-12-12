@@ -77,7 +77,7 @@ img {
 }
 
 .hero-image-and-navigation {
-    background-image: url(images/desktop-image-hero-1.jpg);
+    background-image: url(images/desktop-image-hero-2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -121,7 +121,6 @@ img {
 .primary-navigation {
     list-style-type: none;
     gap: 0;
-    /* padding-inline-end: 1rem; */
 }
 
 .main-section {
@@ -129,7 +128,7 @@ img {
 }
 
 .overview-article>.content {
-    padding: clamp(1em, 8vw, 8em) clamp(.5em, 8vw, 5em);
+    padding: clamp(1em, 8vw, 6.6em) clamp(.5em, 8vw, 4.5em);
     padding-bottom: clamp(1em, 3vw, 5em);
 }
 
