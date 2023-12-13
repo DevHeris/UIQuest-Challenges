@@ -1,6 +1,7 @@
 let current = 0;
 let isMobile = window.matchMedia("(max-width: 43em)").matches;
-
+const primaryNav = document.querySelector(".primary-navigation");
+const navToggle = document.querySelector(".mobile-nav-toggle");
 const nextBtn = document.querySelectorAll(".next-slide");
 const prevBtn = document.querySelectorAll(".prev-slide");
 const overviewHeadingEl = document.querySelector(".overview-heading");
@@ -25,6 +26,12 @@ const overviewParagraphs = [
   `Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.`,
 ];
 
+const toggleNav = () => {
+  const isVisible = primaryNav.getAttribute("data-visible") === "true";
+  primaryNav.setAttribute("data-visible", isVisible ? "false" : "true");
+  navToggle.setAttribute("aria-expanded", isVisible ? "false" : "true");
+};
+
 const updateSlideContent = () => {
   if (current >= overviewHeadings.length) current = 0;
   if (current < 0) current = overviewHeadings.length - 1;
@@ -48,7 +55,7 @@ const showPrevSlide = () => {
   updateSlideContent();
 };
 
-// setInterval(showNextSlide, 6000);
+setInterval(showNextSlide, 6000);
 
 if (isMobile) {
   mobileControl.classList.remove("hide");
@@ -65,3 +72,5 @@ document.addEventListener("keydown", (event) => {
 
 nextBtn.forEach((btn) => btn.addEventListener("click", showNextSlide));
 prevBtn.forEach((btn) => btn.addEventListener("click", showPrevSlide));
+
+navToggle.addEventListener("click", toggleNav);
