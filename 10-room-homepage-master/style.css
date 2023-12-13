@@ -128,7 +128,7 @@ img {
 }
 
 .overview-article>.content {
-    padding: clamp(3em, 8vw, 6.6em) clamp(2em, 8vw, 4.5em);
+    padding: clamp(3em, 8vw, 6.6em) clamp(2em, 4vw, 4.5em);
     padding-bottom: clamp(1em, 3vw, 5em);
 }
 
@@ -224,6 +224,10 @@ img {
         position: absolute;
         right: 0;
         bottom: 0;
+    }
+
+    .desktop-control {
+        justify-content: right;
     }
 }
 

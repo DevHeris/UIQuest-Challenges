@@ -1,5 +1,5 @@
 let current = 0;
-let isMobile = window.matchMedia("(max-width: 43em)").matches;
+let isMobile = window.matchMedia("(max-width: 1000px)").matches;
 const primaryNav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const nextBtn = document.querySelectorAll(".next-slide");
