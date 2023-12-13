@@ -241,6 +241,8 @@ img {
         left: 0;
         right: 0;
 
+        justify-content: right;
+
         padding: min(4.8vh, 12rem) 2em;
 
         background-color: var(--white);
@@ -257,10 +259,12 @@ img {
         color: var(--black);
     }
 
-    .hero-container .logo {
+    .logo {
         position: absolute;
-        z-index: 9999;
-        margin: 0;
+        top: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 4em;
     }
 
     .mobile-nav-toggle {
@@ -273,7 +277,7 @@ img {
         aspect-ratio: 1;
         border: 0;
         top: 2.5rem;
-        right: 1rem;
+        left: 2em;
         z-index: 9999;
         background-color: transparent;
     }
