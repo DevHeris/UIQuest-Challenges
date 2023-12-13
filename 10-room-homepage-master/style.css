@@ -77,7 +77,7 @@ img {
 }
 
 .hero-image-and-navigation {
-    background-image: url(images/desktop-image-hero-2.jpg);
+    background-image: url(images/desktop-image-hero-1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -216,8 +216,8 @@ img {
     }
 
     .hero-image-and-navigation {
-        padding-bottom: clamp(15em, 3vw, 20em);
         position: relative;
+        height: 25vh;
     }
 
     .mobile-control {
